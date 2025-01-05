@@ -5,6 +5,8 @@
   @include('sections.services') 
   @include('sections.home-map') 
   @include('sections.home-collab') 
+  @include('sections.home-report') 
+  @include('sections.home-post') 
   {{-- @include('sections.portfolio')  --}}
   {{-- @include('sections.faq')  --}}
   {{-- @include('sections.team')  --}}

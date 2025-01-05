@@ -42,7 +42,10 @@
       @endfor
 
     </div>
-    
+    <br>
+    <div class="text-center">
+      <button class="btn btn-primary">Selengkapnya</button>
+    </div>    
 
   </div>
 

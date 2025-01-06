@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\APIController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Dashboard\DashHome;
+use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/blog', [BlogController::class, 'blog']);
@@ -9,7 +12,9 @@ Route::get('/post/{post:slug}', [BlogController::class, 'post']);
 
 // AUTH
 Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/register', [AuthController::class, 'index2']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 // DASHBOARD

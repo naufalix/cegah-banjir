@@ -35,7 +35,7 @@
                 </div>
                 <div class="menu-item">
                   <a class="menu-link py-2" href="/dashboard/cultural">
-                    <span class="menu-title menu-icon"><i class="mdi mdi-drama-masks fs-3"></i> Agenda Budaya</span>
+                    <span class="menu-title menu-icon"><i class="mdi mdi-drama-masks fs-3"></i> Kegiatan</span>
                   </a>
                 </div>
                 <div class="menu-item">

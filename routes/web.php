@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APIController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Dashboard\DashActivity;
 use App\Http\Controllers\Dashboard\DashHome;
 use App\Http\Controllers\Dashboard\DashFlood;
 use App\Http\Controllers\Dashboard\DashPost;
@@ -22,18 +23,19 @@ Route::get('/logout', [AuthController::class, 'logout']);
 // DASHBOARD
 Route::group(['prefix'=> 'dashboard','middleware'=>['auth']], function(){
   Route::get('/', [DashHome::class, 'index']);
-  Route::get('/dashboard', [DashHome::class, 'index']);
-  Route::get('/lapor-banjir', [DashFlood::class, 'index']);
   Route::get('/artikel', [DashPost::class, 'index']);
-  Route::get('/faq', [DashFaq::class, 'index']);
+  Route::get('/dashboard', [DashHome::class, 'index']);
+  Route::get('/kegiatan', [DashActivity::class, 'index']);
+  Route::get('/lapor-banjir', [DashFlood::class, 'index']);
   
-  Route::post('/lapor-banjir', [DashFlood::class, 'postHandler']);
   Route::post('/artikel', [DashPost::class, 'postHandler']);
-  Route::post('/faq', [DashFaq::class, 'postHandler']);
+  Route::post('/kegiatan', [DashActivity::class, 'postHandler']);
+  Route::post('/lapor-banjir', [DashFlood::class, 'postHandler']);
 });
 
 // API
 Route::group(['prefix'=> 'api'], function(){
+  Route::get('activity/{activity:id}', [APIController::class, 'activity']);
   Route::get('flood/{flood:id}', [APIController::class, 'flood']);
   Route::get('post/{post:id}', [APIController::class, 'post']);
 });

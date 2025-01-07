@@ -6,6 +6,8 @@
     <script src="/assets/plugins/custom/datatables.net-bs4/dataTables.bootstrap4.js"></script>
     <script src="/assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
     <script src="/assets/plugins/custom/select2/select2.min.js"></script>
+		<script src="/assets/vendor/leaflet/leaflet.js"></script>
+		<script src="/assets/vendor/leaflet/leaflet-providers.js"></script>
     {{-- <script src="/assets/plugins/global/plugins.bundle.js"></script> --}}
     <!--end::Page Vendors Javascript-->
     <!--begin::Page Custom Javascript(used by this page)-->

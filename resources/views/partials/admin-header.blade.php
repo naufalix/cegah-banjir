@@ -23,38 +23,23 @@
                   </a>
                 </div>
                 <!--end::Logo-->
+
                 <!--begin::Wrapper-->
                 <div class="d-flex align-items-center justify-content-between flex-lg-grow-1">
+                  
                   <!--begin::Header title-->
                   <div class="d-flex align-items-center" id="kt_docs_header_title">
-                    <!--begin::Page title-->
                     <div class="docs-page-title d-flex flex-column flex-lg-row align-items-lg-center py-5 mb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_docs_content_container', 'lg': '#kt_docs_header_title'}">
-                      <!--begin::Title-->
-                      <h1 class="d-flex align-items-center text-dark my-1 fs-4">Documentation
-                      <a href="../dist/documentation/getting-started/changelog.html" class="badge fw-bold fs-9 px-2 ms-2 badge-white text-hover-primary shadow-sm">v1.0.0</a></h1>
-                      <!--end::Title-->
-                      <!--begin::Separator-->
+                      <h1 class="d-flex align-items-center text-dark my-1 fs-4">Dashboard
+                      {{-- <a href="../dist/documentation/getting-started/changelog.html" class="badge fw-bold fs-9 px-2 ms-2 badge-white text-hover-primary shadow-sm">v1.0.0</a></h1> --}}
                       <span class="d-none d-lg-block bullet h-20px w-1px bg-secondary mx-4"></span>
-                      <!--end::Separator-->
-                      <!--begin::Breadcrumb-->
                       <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-6 my-1">
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item text-gray-600">Getting Started</li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item">
-                          <span class="bullet w-5px h-2px"></span>
-                        </li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item text-dark">Overview</li>
-                        <!--end::Item-->
+                        <li class="breadcrumb-item text-dark">{{explode("|",$title)[1]}}</li>
                       </ul>
-                      <!--end::Breadcrumb-->
                     </div>
-                    <!--end::Page title-->
                   </div>
                   <!--end::Header title-->
+
                   <!--begin::Toolbar-->
                   <div class="d-flex align-items-center">
                     <!--begin::Search-->

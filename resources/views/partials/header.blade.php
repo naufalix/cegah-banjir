@@ -24,6 +24,7 @@
             <li><a href="#">Dropdown 4</a></li>
           </ul>
         </li>
+        <a href="/login" class="btn btn-success btn-sm text-white" style="padding: 4px 16px">Masuk</a>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>

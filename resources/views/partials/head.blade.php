@@ -45,12 +45,13 @@
       font-size: 14px;
     }
     .btn{
+      font-size: 14px;
       font-weight: 400;
       letter-spacing: 1px;
       display: inline-block;
       border-radius: 50px;
       transition: 0.5s;
-      padding: 8px 28px 10px 28px;
+      padding: 10px 20px;
     }
 
     /* Testimonial */

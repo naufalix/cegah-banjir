@@ -24,13 +24,13 @@
                   </a>
                 </div>
                 <div class="menu-item">
-                  <a class="menu-link py-2" href="/dashboard/city">
-                    <span class="menu-title menu-icon"><i class="fa fa-bank fs-3"></i> Kota</span>
+                  <a class="menu-link py-2" href="/dashboard/lapor-banjir">
+                    <span class="menu-title menu-icon"><i class="bi bi-droplet-half fs-3"></i> Lapor banjir</span>
                   </a>
                 </div>
                 <div class="menu-item">
-                  <a class="menu-link py-2" href="/dashboard/encyclopedia">
-                    <span class="menu-title menu-icon"><i class="mdi mdi-book fs-3"></i> Ensiklopedia</span>
+                  <a class="menu-link py-2" href="/dashboard/artikel">
+                    <span class="menu-title menu-icon"><i class="mdi mdi-lead-pencil fs-3"></i> Artikel Edukasi</span>
                   </a>
                 </div>
                 <div class="menu-item">

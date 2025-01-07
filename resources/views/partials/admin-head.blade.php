@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/plugins/custom/prismjs/prismjs.bundle.css"/>
     <link rel="stylesheet" type="text/css" href="/assets/plugins/custom/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/plugins/custom/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css" />
     {{-- <link rel="stylesheet" type="text/css" href="/assets/plugins/global/plugins.bundle.css"/> --}}
     <!--end::Page Vendor Stylesheets-->
 

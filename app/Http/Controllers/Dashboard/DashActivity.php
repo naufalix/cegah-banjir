@@ -15,7 +15,7 @@ class Dashactivity extends Controller
     public function index(){
         return view('dashboard.activity',[
             "title" => "Dashboard | Kegiatan",
-            "cities" => Activity::whereUserId(auth()->user()->id)->orderBy("id","DESC")->get(),
+            "activities" => Activity::whereUserId(auth()->user()->id)->orderBy("id","DESC")->get(),
         ]);
     }
 
@@ -41,6 +41,7 @@ class Dashactivity extends Controller
             'name'=>'required',
             'organizer'=>'required',
             'location'=>'required',
+            'description'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
             'image' => 'required|image|file|max:1024',

@@ -11,5 +11,8 @@ class Flood extends Model
     public function cause(){
         return $this->belongsTo(Cause::class);
     }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
 

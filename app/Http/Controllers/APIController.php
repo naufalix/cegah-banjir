@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ApiFormatter;
-use App\Models\Activiity;
+use App\Models\Activity;
 use App\Models\Flood;
+use App\Models\FollowUp;
 use App\Models\Post;
 use Exception;
 use Illuminate\Http\Request;
@@ -21,6 +22,9 @@ class APIController extends Controller
   }
   public function flood(Flood $flood){  
     return ApiFormatter::createApi(200,"Success",$flood);
+  }
+  public function followUp(FollowUp $data){
+    return ApiFormatter::createApi(200,"Success",$data);
   }
   public function post(Post $post){  
     return ApiFormatter::createApi(200,"Success",$post);

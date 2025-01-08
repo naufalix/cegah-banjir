@@ -19,7 +19,8 @@
             <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
               <th>No.</th>
               <th style="min-width: 150px">Detail lokasi</th>
-              <th style="min-width: 300px">Penyebab banjir</th>
+              <th style="min-width: 300px">Deskripsi</th>
+              <th style="min-width: 120px">Penyebab banjir</th>
               <th style="min-width: 120px">Nama Pelapor</th>
               <th style="min-width: 100px">Tanggal banjir</th>
               <th style="min-width: 90px">Action</th>
@@ -33,6 +34,7 @@
             <tr>
               <td>{{$loop->iteration}}</td>
               <td>{{ $f->title }}</td>
+              <td>{{ strlen($f->description) > 100 ? substr($f->description, 0, 100) . '...' : $f->description }}</td>
               <td>
                 <span class="badge" style="background-color: {{ $f->cause->color }}">{{ $f->cause->name }}</span>
               </td>

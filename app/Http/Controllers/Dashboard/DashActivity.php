@@ -9,7 +9,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Maatwebsite\Excel\Facades\Excel;
 
-class Dashactivity extends Controller
+class DashActivity extends Controller
 {
 
     public function index(){

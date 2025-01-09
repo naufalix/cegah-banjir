@@ -12,7 +12,6 @@ class DashHome extends Controller
     public function index(){
         return view('dashboard.home',[
             "title" => "Dashboard | Home",
-            "users" => User::all(),
         ]);
     }
 

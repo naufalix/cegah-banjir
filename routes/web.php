@@ -8,6 +8,7 @@ use App\Http\Controllers\Dashboard\DashHome;
 use App\Http\Controllers\Dashboard\DashFlood;
 use App\Http\Controllers\Dashboard\DashFollowUp;
 use App\Http\Controllers\Dashboard\DashPost;
+use App\Http\Controllers\Dashboard\DashUser;
 use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -28,12 +29,14 @@ Route::group(['prefix'=> 'dashboard','middleware'=>['auth']], function(){
   Route::get('/dashboard', [DashHome::class, 'index']);
   Route::get('/kegiatan', [DashActivity::class, 'index']);
   Route::get('/lapor-banjir', [DashFlood::class, 'index']);
+  Route::get('/profil', [DashUser::class, 'index']);
   Route::get('/tindak-lanjut', [DashFollowUp::class, 'index']);
   
   Route::post('/artikel', [DashPost::class, 'postHandler']);
   Route::post('/kegiatan', [DashActivity::class, 'postHandler']);
   Route::post('/lapor-banjir', [DashFlood::class, 'postHandler']);
   Route::post('/lapor-banjir', [DashFlood::class, 'postHandler']);
+  Route::post('/profil', [DashUser::class, 'postHandler']);
   Route::post('/tindak-lanjut', [DashFollowUp::class, 'postHandler']);
 });
 

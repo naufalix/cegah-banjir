@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APIController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\Dashboard\DashActivity;
 use App\Http\Controllers\Dashboard\DashHome;
 use App\Http\Controllers\Dashboard\DashFlood;
@@ -13,8 +14,8 @@ use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/beranda', [HomeController::class, 'index']);
-Route::get('/blog', [BlogController::class, 'blog']);
-Route::get('/post/{post:slug}', [BlogController::class, 'post']);
+Route::get('/artikel', [PostController::class, 'blog']);
+Route::get('/artikel/{post:slug}', [PostController::class, 'post']);
 Route::get('/peta-banjir', [HomeController::class, 'map']);
 
 // AUTH

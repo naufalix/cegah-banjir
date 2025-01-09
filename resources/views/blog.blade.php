@@ -1,8 +1,10 @@
-<!-- About Section -->
+@extends('layouts.index')
+
+@section('content')
 <section id="home-post" class="section bg-light">
 
   <div class="container section-title" data-aos="fade-up">
-    <h2>Edukasi</h2>
+    <h2>Artikel Edukasi</h2>
     <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
   </div>
 
@@ -24,7 +26,7 @@
                 <a href="/artikel/{{$p->slug}}">{{$p->title}}</a>
               </h5>
               <p style="font-size: 14px">
-                {{ strlen($p->body) > 100 ? substr($p->body, 0, 100) . '...' : $p->body }}  
+                {{ strlen($p->body) > 100 ? substr($p->body, 0, 100) . '...' : $p->body }}
               </p>
               <div class="d-flex" style="font-size: 14px">
                 <img class="rounded-circle" src="/assets/img/user/{{ $p->user->image ? $p->user->image : 'default.webp' }}" alt="" width="25" height="25">
@@ -37,12 +39,9 @@
       </div>
       @endforeach
 
-    </div>
-    <br>
-    <div class="text-center">
-      <a href="/artikel" class="btn btn-success">Lihat semua artikel</a>
-    </div>    
+    </div>  
 
   </div>
 
-</section><!-- /About Section -->
+</section>
+@endsection

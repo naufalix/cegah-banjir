@@ -61,8 +61,8 @@
         var popupContent = `
           <b>${flood.title}</b><br>
           ${flood.description}<br>
-          Area: ${flood.area}<br>
-          Date: ${flood.flood_date}<br>
+          Deskripsi: ${flood.description}<br>
+          Penyebab: ${flood.cause.name}<br>
           <button class='btn btn-sm btn-primary' onclick='pergi(${flood.id})'>Pergi</button>
         `;
 

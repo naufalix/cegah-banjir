@@ -22,16 +22,11 @@
               <th style="min-width: 150px">Detail lokasi</th>
               <th style="min-width: 300px">Penyebab banjir</th>
               <th style="min-width: 120px">Koordinat</th>
-              <th style="min-width: 100px">Luas area banjir</th>
-              <th style="min-width: 100px">Tanggal banjir</th>
               <th style="min-width: 90px">Action</th>
             </tr>
           </thead>
           <tbody>
             @foreach ($floods as $f)
-            @php
-              $fdate = date_create($f->flood_date);
-            @endphp
             <tr>
               <td>{{$loop->iteration}}</td>
               <td>{{ $f->title }}</td>
@@ -42,8 +37,6 @@
                 <span class="badge badge-primary">{{ substr($f->latitude,0,6) }}</span>
                 <span class="badge badge-primary">{{ substr($f->longitude,0,6) }}</span>
               </td>
-              <td>{{ $f->area }} m²</td>
-              <td>{{date_format($fdate,"d/m/Y H:i")}}</td>
               <td>
                 <a href="#" class="btn btn-icon btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit" onclick="edit({{ $f->id }})"><i class="bi bi-pencil-fill"></i></a>
                 <a href="#" class="btn btn-icon btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#hapus" onclick="hapus({{ $f->id }})"><i class="fa fa-times"></i></a>
@@ -100,14 +93,6 @@
               <label class="required fw-bold mb-2">Upload foto</label>
               <input type="file" class="form-control" name="image" required>
             </div>
-            <div class="col-6 col-md-6">
-              <label class="required fw-bold mb-2">Tanggal banjir</label>
-              <input type="date" class="form-control" name="flood_date" required>
-            </div>
-            <div class="col-6 col-md-6">
-              <label class="required fw-bold mb-2">Luas area banjir (m²)</label>
-              <input type="number" class="form-control" name="area" required>
-            </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -159,14 +144,6 @@
               <div class="col-12 col-md-6">
                 <label class="fw-bold mb-2">Upload foto</label>
                 <input type="file" class="form-control" name="image">
-              </div>
-              <div class="col-6 col-md-6">
-                <label class="required fw-bold mb-2">Tanggal banjir</label>
-                <input type="date" class="form-control" name="flood_date" required>
-              </div>
-              <div class="col-6 col-md-6">
-                <label class="required fw-bold mb-2">Luas area banjir (m²)</label>
-                <input type="number" class="form-control" name="area" required>
               </div>
             </div>
           </div>
@@ -238,8 +215,6 @@
         $('#edit input[name="latitude"]').val(mydata.latitude);
         $('#edit input[name="longitude"]').val(mydata.longitude);
         $('#edit select[name="cause_id"]').val(mydata.cause_id);
-        $('#edit input[name="flood_date"]').val(mydata.flood_date);
-        $('#edit input[name="area"]').val(mydata.area);
         $("#et").text("Edit "+mydata.title);
         L.marker([mydata.latitude, mydata.longitude]).addTo(map2).bindPopup(`Latitude: ${lat}<br>Longitude: ${lng}`).openPopup();
       }

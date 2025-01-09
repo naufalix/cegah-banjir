@@ -45,8 +45,6 @@ class DashFlood extends Controller
             'description'=>'required',
             'latitude'=>'required',
             'longitude'=>'required',
-            'flood_date'=>'required',
-            'area'=>'required',
             'image' => 'required|image|file|max:1024',
         ]);
         $validatedData['user_id'] = auth()->user()->id;
@@ -90,8 +88,6 @@ class DashFlood extends Controller
             'description'=>'required',
             'latitude'=>'required',
             'longitude'=>'required',
-            'flood_date'=>'required',
-            'area'=>'required',
             'image' => 'image|file|max:1024',
         ]);
         

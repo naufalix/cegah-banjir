@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\AuthController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/blog', [BlogController::class, 'blog']);
 Route::get('/post/{post:slug}', [BlogController::class, 'post']);
+Route::get('/peta-banjir', [HomeController::class, 'map']);
 
 // AUTH
 Route::get('/login', [AuthController::class, 'index'])->name('login');

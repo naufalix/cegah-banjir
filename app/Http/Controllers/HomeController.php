@@ -25,6 +25,12 @@ class HomeController extends Controller
         ]);
     }
 
+    public function map(){
+        return view('map',[
+            "meta" => $this->meta(),
+        ]);
+    }
+
     // public function daikachan(){
     //     $meta = $this->meta();
     //     $meta['url'] = "https://daikazoku.ub.ac.id";

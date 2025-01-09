@@ -1,7 +1,7 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
   <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-    <a href="index.html" class="logo d-flex align-items-center me-auto">
+    <a href="/" class="logo d-flex align-items-center me-auto">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <img src="assets/img/logo.png" alt="">
       {{-- <h1 class="sitename">Ninestars</h1> --}}
@@ -9,8 +9,8 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="index.html#hero" class="active">Beranda</a></li>
-        <li><a href="index.html#about">Peta banjir</a></li>
+        <li><a href="/" class="active">Beranda</a></li>
+        <li><a href="/peta-banjir">Peta banjir</a></li>
         <li><a href="index.html#services">Kolaborator</a></li>
         <li><a href="index.html#portfolio">Laporan</a></li>
         <li><a href="index.html#team">Edukasi</a></li>

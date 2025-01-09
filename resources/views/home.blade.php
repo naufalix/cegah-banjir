@@ -36,6 +36,42 @@
   //   attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   // });
 
+  // Set leaflet marker
+  $.ajax({
+    url: "/api/floods",
+    type: 'GET',
+    dataType: 'json',
+    success: function(response) {
+      var mydata = response.data;
+
+      // Loop through the data and add markers with the respective icon
+      mydata.forEach(function(flood) {
+        // Get the custom icon for the flood's cause_id, or a default icon if not mapped
+        var customIcon = L.icon({
+          iconUrl: '/assets/img/marker/'+flood.cause_id+'.png',
+          iconSize: [20, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
+
+        // Create a marker with the custom icon
+        var marker = L.marker([flood.latitude, flood.longitude], { icon: customIcon }).addTo(map);
+
+        // Create a popup for the marker
+        var popupContent = `
+          <b>${flood.title}</b><br>
+          ${flood.description}<br>
+          Area: ${flood.area}<br>
+          Date: ${flood.flood_date}<br>
+          <button class='btn btn-sm btn-primary' onclick='pergi(${flood.id})'>Pergi</button>
+        `;
+
+        // Bind the popup to the marker
+        marker.bindPopup(popupContent);
+      });
+    }
+  });
+
   var swiper3 = new Swiper(".mySwiper3", {
     slidesPerView: 1,
     spaceBetween: 30,

@@ -44,6 +44,7 @@ Route::group(['prefix'=> 'dashboard','middleware'=>['auth']], function(){
 Route::group(['prefix'=> 'api'], function(){
   Route::get('activity/{activity:id}', [APIController::class, 'activity']);
   Route::get('flood/{flood:id}', [APIController::class, 'flood']);
+  Route::get('floods', [APIController::class, 'floods']);
   Route::get('follow-up/{data:id}', [APIController::class, 'followUp']);
   Route::get('post/{post:id}', [APIController::class, 'post']);
 });

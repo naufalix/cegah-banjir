@@ -264,8 +264,8 @@
 @section('script')
 <script>
   var map = L.map('map', {
-    center: [-7, 110],
-    zoom: 12
+    center: [-7.68, 111.87],
+    zoom: 10
   });
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

@@ -18,7 +18,8 @@ class APIController extends Controller
     return ApiFormatter::createApi(200,"Success",$activity);
   }
   public function floods(){
-    return ApiFormatter::createApi(200,"Success",Flood::all());
+    $floods = Flood::with('cause')->get();
+    return ApiFormatter::createApi(200, "Success", $floods);
   }
   public function flood(Flood $flood){  
     return ApiFormatter::createApi(200,"Success",$flood);

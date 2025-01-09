@@ -34,6 +34,10 @@
   <link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css" />
   <link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
 
+  <!-- jQuery -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/jquery.easing.js"></script>
+
   <!-- Main CSS File -->
   <link rel="stylesheet" href="/assets/css/main.css">
 

@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 // use App\Models\Division;
 // use App\Models\Faq;
 use App\Models\Meta;
-// use App\Models\Post;
+use App\Models\Post;
 // use App\Models\Testimonial;
 
 class HomeController extends Controller
@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function index(){
         return view('home',[
             "meta" => $this->meta(),
-            // "divisions" => Division::orderBy('id', 'ASC')->get(),
+            "posts" => Post::orderBy('id', 'DESC')->limit(3)->get(),
             // "faqs" => Faq::whereShow(1)->orderBy('sort', 'ASC')->get(),
             // "posts" => Post::orderBy('date', 'DESC')->limit(3)->get(),
             // "testimonials" => Testimonial::orderBy('updated_at', 'DESC')->get(),

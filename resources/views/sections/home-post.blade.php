@@ -10,32 +10,35 @@
 
     <div class="row">
       
-      @for ($i = 1; $i < 4; $i++)
+      @foreach ($posts as $p)
+      @php
+        $created = date_create($p->created_at);
+      @endphp
       <div class="col-md-4">
         <div class="card position-relative" style="border-radius:20px; border: 0px">
           <div class="card-body" style="border-radius:20px; padding: 20px">
-            <img class="mb-3" src="https://dongkrakusaha.com/uploads/Cara20200401-062222-images%20(18).jpeg"
+            <img class="mb-3" src="/assets/img/post/{{$p->image}}"
             style="border-radius:10px; width: 100%; aspect-ratio: 16/9; object-fit: cover;">
             <div class="">
               <h5 class="fw-bold" style="font-size: 18px">
-                <a href="">Lorem ipsum dolor sit amet, ipsum consectetur adipisicing elit.</a>
+                <a href="/artikel/{{$p->slug}}">{{$p->title}}</a>
               </h5>
               <p style="font-size: 14px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, voluptas est quia...</p>
               <div class="d-flex" style="font-size: 14px">
-                <img class="rounded-circle" src="/assets/img/team/team-1.jpg" alt="" width="25" height="25">
-                <p class="my-auto ms-2 fw-bold">Budiono Siregar</p>
-                <p class="my-auto ms-auto">18 Agustus 2024</p>
+                <img class="rounded-circle" src="/assets/img/user/{{ $p->user->image ? $p->user->image : 'default.webp' }}" alt="" width="25" height="25">
+                <p class="my-auto ms-2 fw-bold">{{$p->user->name}}</p>
+                <p class="my-auto ms-auto">{{date_format($created,"d F Y")}}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      @endfor
+      @endforeach
 
     </div>
     <br>
     <div class="text-center">
-      <button class="btn btn-primary">Selengkapnya</button>
+      <a href="/artikel" class="btn btn-success">Lihat semua artikel</a>
     </div>    
 
   </div>

@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard\DashUser;
 use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/beranda', [HomeController::class, 'index']);
 Route::get('/blog', [BlogController::class, 'blog']);
 Route::get('/post/{post:slug}', [BlogController::class, 'post']);
 Route::get('/peta-banjir', [HomeController::class, 'map']);

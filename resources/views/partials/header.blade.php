@@ -11,11 +11,11 @@
       <ul>
         <li><a href="/" class="active">Beranda</a></li>
         <li><a href="/peta-banjir">Peta banjir</a></li>
-        <li><a href="index.html#services">Kolaborator</a></li>
-        <li><a href="index.html#portfolio">Laporan</a></li>
-        <li><a href="index.html#team">Edukasi</a></li>
-        <li><a href="index.html#team">Kegiatan</a></li>
-        <li><a href="index.html#team">Ulasan</a></li>
+        <li><a href="/kolaborator">Kolaborator</a></li>
+        <li><a href="/laporan-banjir">Laporan</a></li>
+        <li><a href="/artikel">Edukasi</a></li>
+        <li><a href="/kegiatan">Kegiatan</a></li>
+        <li><a href="/beranda#ulasan">Ulasan</a></li>
         <li class="dropdown d-none"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="#">Dropdown 1</a></li>

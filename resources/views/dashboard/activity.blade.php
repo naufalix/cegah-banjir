@@ -30,8 +30,8 @@
           <tbody>
             @foreach ($activities as $a)
             @php
-              $sdate = date_create($a->start_date);
-              $edate = date_create($a->end_date);
+              $sd = date_create($a->start_date);
+              $ed = date_create($a->end_date);
             @endphp
             <tr>
               <td>{{$loop->iteration}}</td>
@@ -47,8 +47,8 @@
                 <b>No telepon : </b>{{ $a->phone }}
               </td>
               <td><span class="badge badge-primary">{{ $a->location }}</span></td>
-              <td>{{date_format($sdate,"d/m/Y H:i")}}</td>
-              <td>{{date_format($edate,"d/m/Y H:i")}}</td>
+              <td>{{date_format($sd,"d/m/Y H:i")}}</td>
+              <td>{{date_format($ed,"d/m/Y H:i")}}</td>
               <td>
                 <a href="#" class="btn btn-icon btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit" onclick="edit({{ $a->id }})"><i class="bi bi-pencil-fill"></i></a>
                 <a href="#" class="btn btn-icon btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#hapus" onclick="hapus({{ $a->id }})"><i class="fa fa-times"></i></a>

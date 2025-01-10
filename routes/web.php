@@ -18,7 +18,7 @@ Route::get('/artikel', [PostController::class, 'blog']);
 Route::get('/artikel/{post:slug}', [PostController::class, 'post']);
 Route::get('/beranda', [HomeController::class, 'index']);
 Route::get('/kegiatan', [ActivityController::class, 'index']);
-Route::get('/kegiatan/{activity:slug}', [ActivityController::class, 'activity']);
+Route::get('/kegiatan/{activity:id}', [ActivityController::class, 'activity']);
 Route::get('/peta-banjir', [HomeController::class, 'map']);
 
 // AUTH

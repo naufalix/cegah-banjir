@@ -25,7 +25,7 @@
       </div>
 
       <div class="col-lg-4">
-        <h3 class="fw-bold mt-4 mb-3" style="font-size: 20px;">Kegiatan lainnya</h3>
+        <h3 class="fw-bold mt-4 mb-3" style="font-size: 20px;">Artikel lainnya</h3>
         @foreach ($posts as $p)
         <a href="/artikel/{{$p->slug}}" data-aos="fade-up" data-aos-delay="200" >
           <div class="card mb-3" style="border-radius:20px; padding: 20px">

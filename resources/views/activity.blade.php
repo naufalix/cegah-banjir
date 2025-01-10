@@ -22,7 +22,7 @@
       </div>
 
       <div class="col-lg-4">
-        <div class="card mb-3" data-aos="fade-up" data-aos-delay="200" style="border-radius:16px; padding: 20px">
+        <div class="card" data-aos="fade-up" data-aos-delay="200" style="border-radius:16px; padding: 20px">
           <h3 class="fw-bold mb-0" style="font-size: 20px;">Informasi kegiatan</h3>
           <hr>
           <p class="mb-0" style="font-size: 14px"><strong>Penyelenggara</strong> : {{$activity->organizer}}</p>
@@ -32,7 +32,7 @@
         <h3 class="fw-bold mt-4 mb-3" style="font-size: 20px;">Kegiatan lainnya</h3>
         @foreach ($activities as $a)
         <a href="/kegiatan/{{$a->id}}" data-aos="fade-up" data-aos-delay="200" >
-          <div class="card" style="border-radius:20px; padding: 20px">
+          <div class="card mb-3" style="border-radius:20px; padding: 20px">
             <p class="mb-0">{{$a->name}}</p>
           </div>
         </a>

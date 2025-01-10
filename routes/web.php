@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\APIController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
@@ -13,9 +14,11 @@ use App\Http\Controllers\Dashboard\DashUser;
 use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/beranda', [HomeController::class, 'index']);
 Route::get('/artikel', [PostController::class, 'blog']);
 Route::get('/artikel/{post:slug}', [PostController::class, 'post']);
+Route::get('/beranda', [HomeController::class, 'index']);
+Route::get('/kegiatan', [ActivityController::class, 'index']);
+Route::get('/kegiatan/{activity:slug}', [ActivityController::class, 'activity']);
 Route::get('/peta-banjir', [HomeController::class, 'map']);
 
 // AUTH

@@ -28,6 +28,8 @@
           <p class="mb-0" style="font-size: 14px"><strong>Penyelenggara</strong> : {{$activity->organizer}}</p>
           <p class="mb-0" style="font-size: 14px"><strong>Penanggungjawab</strong> : {{$activity->pic_name}}</p>
           <p class="mb-0" style="font-size: 14px"><strong>No telepon</strong> : {{$activity->phone}}</p>
+          <br>
+          <a href="/kolaborator/{{$activity->user->username}}" class="btn btn-success">Profil kolaborator</a>
         </div>
         <h3 class="fw-bold mt-4 mb-3" style="font-size: 20px;">Kegiatan lainnya</h3>
         @foreach ($activities as $a)

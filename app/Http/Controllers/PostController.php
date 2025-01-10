@@ -25,6 +25,7 @@ class PostController extends Controller
         return view('post',[
             "meta" => $meta,
             "post" => $post,
+            "posts" => Post::orderBy('id', 'DESC')->limit(4)->get(),
         ]);
     }
 

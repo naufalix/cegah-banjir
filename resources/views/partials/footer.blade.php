@@ -13,29 +13,18 @@
         </div>
       </div>
 
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Useful Links</h4>
+      <div class="col-lg-2 col-md-3 footer-links ms-auto">
+        <h4>Fitur</h4>
         <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Our Services</h4>
-        <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="/peta-banjir">Peta penyebab banjir</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="/peta-rawan">Peta daerah rawan banjir</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="/artikel">Artikel edukasi</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="/kegiatan">Informasi kegiatan</a></li>
         </ul>
       </div>
 
       <div class="col-lg-4 col-md-12">
-        <h4>Follow Us</h4>
-        <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+        <h4>Ikuti kami</h4>
         <div class="social-links d-flex">
           <a href=""><i class="bi bi-twitter-x"></i></a>
           <a href=""><i class="bi bi-facebook"></i></a>
@@ -48,8 +37,8 @@
   </div>
 
   <div class="container copyright text-center mt-4">
-    <p>© <span>Copyright</span> <strong class="px-1 sitename">Ninestars</strong> <span>All Rights Reserved</span></p>
-    <div class="credits">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">Cegah Banjir</strong> <span>All Rights Reserved</span></p>
+    <div class="credits d-none">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you've purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->

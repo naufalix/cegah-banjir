@@ -14,11 +14,10 @@
         <div class="about-content ps-0 ps-lg-3">
           <h3>Deskripsi Singkat Fitur</h3>
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
+            Fitur ini memungkinkan masyarakat untuk melaporkan berbagai permasalahan yang berpotensi menyebabkan banjir, seperti saluran air tersumbat, penumpukan sampah, dan pendangkalan sungai.
+            Selain itu, fitur ini juga mendukung laporan terkait daerah rawan banjir, mencakup lokasi genangan air, intensitas banjir, durasi genangan, dan dampak yang dirasakan. 
           </p>
-          <button class="btn btn-primary">Selengkapnya</button>
+          <a class="btn btn-success" href="/dashboard/lapor-banjir" target="_blank">Selengkapnya</a>
         </div>
       </div>
 

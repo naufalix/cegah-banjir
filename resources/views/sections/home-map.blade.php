@@ -18,9 +18,7 @@
         <div class="about-content ps-0 ps-lg-3">
           <h3>Peta penyebab banjir</h3>
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
+            Fitur ini memberikan informasi visual tentang faktor-faktor yang menyebabkan banjir di setiap area, seperti drainase yang buruk, urbanisasi tak terkendali, pendangkalan sungai, penumpukan sampah, curah hujan tinggi dan deforestasi. Hal ini membantu masyarakat memahami akar masalah di sekitar mereka dan memotivasi tindakan mitigasi.
           </p>
           <a href="/peta-banjir" class="btn btn-success">Selengkapnya</a>
         </div>

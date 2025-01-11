@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="/assets/vendor/glightbox/css/glightbox.min.css">
   <link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css" />
   <link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/assets/plugins/custom/datatables.net-bs4/dataTables.bootstrap4.css">
 
   <!-- jQuery -->
   <script src="/assets/js/jquery.min.js"></script>

@@ -1,4 +1,6 @@
 <!-- Vendor JS Files -->
+<script src="/assets/plugins/custom/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<script src="/assets/plugins/custom/datatables.net-bs4/jquery.dataTables.js"></script>
 <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/vendor/php-email-form/validate.js"></script>
 <script src="/assets/vendor/aos/aos.js"></script>

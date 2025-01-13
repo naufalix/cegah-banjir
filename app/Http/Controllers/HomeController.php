@@ -28,14 +28,22 @@ class HomeController extends Controller
             "count_post" => Post::all()->count(),
             "count_risk" => Risk::all()->count(),
             "count_user" => User::all()->count(),
-
-
         ]);
     }
 
     public function map(){
+        $meta = $this->meta();
+        $meta['title'] = $post->title;
         return view('map',[
-            "meta" => $this->meta(),
+            "meta" => $meta,
+        ]);
+    }
+
+    public function map2(){
+        $meta = $this->meta();
+        $meta['title'] = $post->title;
+        return view('map2',[
+            "meta" => $meta,
         ]);
     }
 

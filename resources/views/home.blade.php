@@ -8,12 +8,7 @@
   @include('sections.home-report') 
   @include('sections.home-post') 
   @include('sections.home-activity') 
-  @include('sections.home-testimonial') 
-  {{-- @include('sections.portfolio')  --}}
-  {{-- @include('sections.faq')  --}}
-  {{-- @include('sections.team')  --}}
-  {{-- @include('sections.clients')  --}}
-  {{-- @include('sections.contact')  --}}
+  @include('sections.home-testimonial')
 @endsection
 
 @section('script')
@@ -25,16 +20,9 @@
     zoom: 5
   });
 
-  // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-  // L.tileLayer.provider('Stadia.AlidadeSmoothDark').addTo(map);
-  // L.tileLayer.provider('CyclOSM').addTo(map);
-  // var CyclOSM = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
-  //   maxZoom: 20,
-  //   attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  // });
 
   // Set leaflet marker
   $.ajax({
@@ -71,6 +59,56 @@
       });
     }
   });
+
+  ////////
+
+  // Initialize leaflet
+  var map2 = L.map('map2', {
+    center: [-8.0, 112.6],
+    zoom: 11
+  });
+
+  L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map2);
+
+  // Set leaflet circle
+  $.ajax({
+    url: "/api/risks",
+    type: 'GET',
+    dataType: 'json',
+    success: function(response) {
+      var mydata = response.data;
+
+      // Loop through the data and add markers with the respective icon
+      mydata.forEach(function(risk) {
+        
+        // Tambahkan lingkaran dengan efek transparan
+        var circle = L.circle([risk.latitude, risk.longitude], {
+            color: 'none',       // Hilangkan border
+            fillColor: 'red',    // Warna isi lingkaran
+            fillOpacity: 0.3,    // Transparansi isi lingkaran
+            radius: risk.area          // Radius lingkaran dalam meter
+        }).addTo(map2);
+        
+        // Create a popup for the marker
+        var popupContent = `
+          <b>${risk.title}</b><br>
+          ${risk.description}<br>
+          Deskripsi: ${risk.description}<br>
+          Tanggal: ${risk.date}<br>
+          <button class='btn btn-sm btn-primary' onclick='pergi(${risk.id})'>Pergi</button>
+        `;
+
+        // Bind the popup to the marker
+        circle.bindPopup(popupContent);
+      });
+    }
+  });
+
+
+
+  ////////
 
   var swiper3 = new Swiper(".mySwiper3", {
     slidesPerView: 1,

@@ -17,7 +17,7 @@
         <h4>Fitur</h4>
         <ul>
           <li><i class="bi bi-chevron-right"></i> <a href="/peta-banjir">Peta penyebab banjir</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="/peta-rawan">Peta daerah rawan banjir</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="/peta-daerah-rawan">Peta daerah rawan banjir</a></li>
           <li><i class="bi bi-chevron-right"></i> <a href="/artikel">Artikel edukasi</a></li>
           <li><i class="bi bi-chevron-right"></i> <a href="/kegiatan">Informasi kegiatan</a></li>
         </ul>

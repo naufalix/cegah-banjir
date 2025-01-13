@@ -46,6 +46,7 @@ class HomeController extends Controller
         $meta['title'] = "Peta daerah rawan banjir";
         return view('map2',[
             "meta" => $meta,
+            "cities" => City::whereNotNull('latitude')->orderBy('name', 'ASC')->get(),
         ]);
     }
 

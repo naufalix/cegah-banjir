@@ -15,32 +15,32 @@ use Illuminate\Support\Facades\Auth;
 
 class APIController extends Controller
 {
-  
   public function city(City $city){  
     return ApiFormatter::createApi(200,"Success",$city);
   }
   public function activity(Activity $activity){  
     return ApiFormatter::createApi(200,"Success",$activity);
   }
-  public function floods(){
-    $floods = Flood::with('cause')->get();
-    return ApiFormatter::createApi(200, "Success", $floods);
-  }
   public function flood($id){
     $flood = Flood::whereId($id)->with('city')->first();  
     return ApiFormatter::createApi(200,"Success",$flood);
   }
-  // public function flood(Flood $flood){
-    //   return ApiFormatter::createApi(200,"Success",$flood);
-    // }
-    public function followUp(FollowUp $data){
-      return ApiFormatter::createApi(200,"Success",$data);
-    }
-    public function post(Post $post){  
-      return ApiFormatter::createApi(200,"Success",$post);
-    }
-    public function risk($id){
-      $risk = Risk::whereId($id)->with('city')->first();  
-      return ApiFormatter::createApi(200,"Success",$risk);
-    }
+  public function floods(){
+    $floods = Flood::with('cause')->get();
+    return ApiFormatter::createApi(200, "Success", $floods);
+  }
+  public function followUp(FollowUp $data){
+    return ApiFormatter::createApi(200,"Success",$data);
+  }
+  public function post(Post $post){  
+    return ApiFormatter::createApi(200,"Success",$post);
+  }
+  public function risk($id){
+    $risk = Risk::whereId($id)->with('city')->first();  
+    return ApiFormatter::createApi(200,"Success",$risk);
+  }
+  public function risks(){
+    $risks = Risk::with('city')->get();
+    return ApiFormatter::createApi(200, "Success", $risks);
+  }
 }

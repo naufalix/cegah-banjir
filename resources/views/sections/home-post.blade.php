@@ -3,7 +3,7 @@
 
   <div class="container section-title" data-aos="fade-up">
     <h2>Edukasi</h2>
-    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    <p>Pelajari penyebab banjir dan cara efektif mengatasinya.</p>
   </div>
 
   <div class="container px-md-5">
@@ -40,7 +40,7 @@
     </div>
     <br>
     <div class="text-center">
-      <a href="/artikel" class="btn btn-success">Lihat semua artikel</a>
+      <a href="/artikel" class="btn btn-success">Pelajari</a>
     </div>    
 
   </div>

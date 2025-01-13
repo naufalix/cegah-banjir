@@ -2,8 +2,8 @@
 <section id="home-collab" class="section">
 
   <div class="container section-title" data-aos="fade-up">
-    <h2>Kolaborator</h2>
-    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    <h2>Leaderboard Kolaborator</h2>
+    <p>Lihat Peringkat Kolaborator Teratas yang Aktif Berkontribusi dalam Mitigasi Banjir</p>
   </div>
 
   <div class="container">
@@ -44,7 +44,7 @@
     </div>
     <br>
     <div class="text-center">
-      <button class="btn btn-primary">Selengkapnya</button>
+      <button class="btn btn-primary">Beri Kontribusi</button>
     </div>    
 
   </div>

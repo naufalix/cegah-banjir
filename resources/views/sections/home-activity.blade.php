@@ -3,7 +3,7 @@
 
   <div class="container section-title" data-aos="fade-up">
     <h2>Kegiatan</h2>
-    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    <p>Ikuti aksi nyata untuk lingkungan lebih baik</p>
   </div>
 
   <div class="container px-md-5">
@@ -31,7 +31,7 @@
     </div>
     <br>
     <div class="text-center">
-      <a href="/kegiatan" class="btn btn-success">Selengkapnya</a>
+      <a href="/kegiatan" class="btn btn-success">Ikuti</a>
     </div>    
   </div>
 

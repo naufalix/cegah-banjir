@@ -3,7 +3,7 @@
 
   <div class="container section-title" data-aos="fade-up">
     <h2>Laporan</h2>
-    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    <p>Bantu laporkan potensi dan daerah rawan banjir di sekitar anda</p>
   </div>
 
   <div class="container">
@@ -17,7 +17,7 @@
             Fitur ini memungkinkan masyarakat untuk melaporkan berbagai permasalahan yang berpotensi menyebabkan banjir, seperti saluran air tersumbat, penumpukan sampah, dan pendangkalan sungai.
             Selain itu, fitur ini juga mendukung laporan terkait daerah rawan banjir, mencakup lokasi genangan air, intensitas banjir, durasi genangan, dan dampak yang dirasakan. 
           </p>
-          <a class="btn btn-success" href="/dashboard/lapor-banjir" target="_blank">Selengkapnya</a>
+          <a class="btn btn-success" href="/dashboard/lapor-banjir" target="_blank">Laporan</a>
         </div>
       </div>
 

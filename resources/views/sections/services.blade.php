@@ -4,16 +4,16 @@
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Statistik CegahBanjir</h2>
-    <p>Temukan gambaran lengkap untuk aksi mitigasi banjir</p>
+    <p>Lihat data terkini dan ambil langkah nyata untuk mencegah banjir</p>
   </div><!-- End Section Title -->
 
   <div class="container">
 
-    <div class="row gy-4">
+    <div class="row gy-4 justify-content-center">
 
       @php
         $statistics = [
-          (object) ['name' => 'Penyebab banjir',      'icon' => 'bi bi-geo-alt',                  'count' => $count_cause,],
+          (object) ['name' => 'Penyebab banjir',      'icon' => 'bi bi-geo-alt',                  'count' => $count_cause-1,],
           (object) ['name' => 'Daerah rawan banjir',  'icon' => 'bi bi-map-fill',                 'count' => $count_risk,],
           (object) ['name' => 'Kolaborator',          'icon' => 'bi bi-person-fill',              'count' => $count_user,],
           (object) ['name' => 'Laporan',              'icon' => 'bi bi-file-earmark-text-fill',   'count' => $count_risk+$count_flood,],
@@ -31,7 +31,7 @@
                 <div class="icon"><i class="{{$s->icon}} icon"></i></div>
               </div>
               <div class="col-9">
-                <p class="fs-3 mb-2">{{$s->count}}</p>
+                <p class="fs-3 mb-2">{{$s->count}}+</p>
                 <h4 class="mb-0 fs-6"><a href="/beranda#home-map" class="stretched-link">{{$s->name}}</a></h4>
               </div>
             </div>

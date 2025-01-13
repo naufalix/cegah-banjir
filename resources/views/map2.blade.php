@@ -62,7 +62,7 @@
             Deskripsi: ${risk.description}<br>
             Luas area banjir: ${risk.area}m²<br>
             Tanggal banjir: ${risk.date}<br>
-            Pelapor: ${risk.user.name}<br>
+            Pelapor: <a href="/kolaborator/${risk.user.username}">${risk.user.name}</a><br>
             <br>
             <a class='btn btn-success text-white py-1 px-3' href="/daerah-rawan/${risk.id}"'>Detail laporan</a>
           </div>

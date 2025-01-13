@@ -64,7 +64,7 @@
 
   // Initialize leaflet
   var map2 = L.map('map2', {
-    center: [-8.0, 112.6],
+    center: [-7.0, 110.4],
     zoom: 11
   });
 

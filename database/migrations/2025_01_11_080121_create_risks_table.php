@@ -11,20 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('floods', function (Blueprint $table) {
+        Schema::create('risks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('cause_id');
-            $table->foreign('cause_id')->references('id')->on('causes')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('city_id');
             $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('cascade');
             $table->string('title');
             $table->string('description');
             $table->string('latitude');
             $table->string('longitude');
+            $table->string('area');
             $table->string('image');
-            $table->string('status')->default(0);
+            $table->string('date');
             $table->timestamps();
         });
     }
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('floods');
+        Schema::dropIfExists('risks');
     }
 };

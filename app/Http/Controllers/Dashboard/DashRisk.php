@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
-use App\Models\Cause;
 use App\Models\City;
-use App\Models\Flood;
+use App\Models\Risk;
 use Illuminate\Http\Request;
 use Intervention\Image\Image;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
-class DashFlood extends Controller
+class DashRisk extends Controller
 {
     public function index(){
-        return view('dashboard.flood',[
-            "title" => "Dashboard | Lapor penyebab banjir",
-            "floods" => Flood::whereUserId(auth()->user()->id)->orderBy("id","DESC")->get(),
-            "causes" => Cause::orderBy("id","ASC")->get(),
+        return view('dashboard.risk',[
+            "title" => "Dashboard | Lapor daerah rawan banjir",
             "cities" => City::whereNotNull('latitude')->orderBy('name', 'ASC')->get(),
+            "risks" => Risk::whereUserId(auth()->user()->id)->orderBy("id","DESC")->get(),
         ]);
     }
 
@@ -42,12 +40,13 @@ class DashFlood extends Controller
     public function store(Request $request){
         
         $validatedData = $request->validate([
-            'cause_id'=>'required',
             'city_id'=>'required',
             'title'=>'required',
             'description'=>'required',
             'latitude'=>'required',
             'longitude'=>'required',
+            'area'=>'required',
+            'date'=>'required',
             'image' => 'required|image|file|max:1024',
         ]);
         $validatedData['user_id'] = auth()->user()->id;
@@ -76,9 +75,9 @@ class DashFlood extends Controller
         
         // Upload new image
         $validatedData['image'] = time().".webp";
-        $imageWebp->save('assets/img/flood/'.$validatedData['image']);
+        $imageWebp->save('assets/img/risk/'.$validatedData['image']);
 
-        Flood::create($validatedData);
+        Risk::create($validatedData);
         return ['status'=>'success','message'=>'Laporan berhasil ditambahkan'];
     }
 
@@ -86,27 +85,28 @@ class DashFlood extends Controller
         
         $validatedData = $request->validate([
             'id'=>'required|numeric',
-            'cause_id'=>'required',
             'city_id'=>'required',
             'title'=>'required',
             'description'=>'required',
             'latitude'=>'required',
             'longitude'=>'required',
+            'area'=>'required',
+            'date'=>'required',
             'image' => 'image|file|max:1024',
         ]);
         
-        $flood = Flood::find($request->id);
+        $risk = Risk::find($request->id);
 
         //Check if the data is found
-        if(!$flood){
+        if(!$risk){
             return ['status'=>'error','message'=>'Laporan tidak ditemukan'];
         }
-        
+
         //Check if has image
         if($request->file('image')){
 
             // Delete old image
-            $image_path = public_path().'/assets/img/flood/'.$flood->image;
+            $image_path = public_path().'/assets/img/risk/'.$risk->image;
             if (file_exists($image_path)) {
                 unlink($image_path); // Delete the image file
             }
@@ -135,16 +135,17 @@ class DashFlood extends Controller
             
             // Upload new image
             $validatedData['image'] = $validatedData['id'].'-'.time().".webp";
-            $imageWebp->save('assets/img/flood/'.$validatedData['image']);
+            $imageWebp->save('assets/img/risk/'.$validatedData['image']);
             
-            $flood->update($validatedData);
+            $risk->update($validatedData);
             return ['status'=>'success','message'=>'Laporan berhasil diupdate'];
             
         }else{
             // Update data
-            $flood->update($validatedData);    
+            $risk->update($validatedData);    
             return ['status'=>'success','message'=>'Laporan berhasil diedit'];
         }
+        
     }
 
     public function destroy(Request $request){
@@ -153,21 +154,21 @@ class DashFlood extends Controller
             'id'=>'required|numeric',
         ]);
 
-        $flood = Flood::find($request->id);
+        $risk = Risk::find($request->id);
 
         // Check if the data is found
-        if (!$flood) {
+        if (!$risk) {
             return ['status' => 'error', 'message' => 'Laporan tidak ditemukan'];
         }
 
-        $image_path = public_path().'/assets/img/flood/'.$flood->image;
+        $image_path = public_path().'/assets/img/risk/'.$risk->image;
 
         // Check if the image file exists before attempting to delete it
         if (file_exists($image_path)) {
             unlink($image_path); // Delete the image file
         }
 
-        Flood::destroy($request->id);
+        Risk::destroy($request->id);
         return ['status' => 'success', 'message' => 'Laporan berhasil dihapus'];
     }
 

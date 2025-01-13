@@ -23,11 +23,31 @@
                     <span class="menu-title menu-icon"><i class="fa fa-dashboard"></i> Dashboard</span>
                   </a>
                 </div>
-                <div class="menu-item">
-                  <a class="menu-link py-2" href="/dashboard/lapor-banjir">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                  <span class="menu-link py-2">
                     <span class="menu-title menu-icon"><i class="bi bi-droplet-half fs-3"></i> Lapor banjir</span>
-                  </a>
+                    <span class="menu-arrow"></span>
+                  </span>
+                  <div class="menu-sub menu-sub-accordion">
+                    <div class="menu-item">
+                      <a class="menu-link py-2" href="/dashboard/lapor-banjir">
+                        <span class="menu-bullet">
+                          <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Penyebab banjir</span>
+                      </a>
+                    </div>
+                    <div class="menu-item">
+                      <a class="menu-link py-2" href="/dashboard/lapor-rawan">
+                        <span class="menu-bullet">
+                          <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Daerah rawan banjir</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
+
                 <div class="menu-item">
                   <a class="menu-link py-2" href="/dashboard/artikel">
                     <span class="menu-title menu-icon"><i class="mdi mdi-lead-pencil fs-3"></i> Artikel Edukasi</span>

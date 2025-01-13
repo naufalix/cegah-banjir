@@ -20,33 +20,38 @@
             <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
               <th>No.</th>
               <th style="min-width: 150px">Detail lokasi</th>
-              <th style="min-width: 150px">Kota/kabupaten</th>
-              <th style="min-width: 300px">Penyebab banjir</th>
+              <th style="min-width: 150px">Kota/Kabupaten</th>
+              <th style="min-width: 150px">Luas area banjir</th>
               <th style="min-width: 120px">Koordinat</th>
+              <th style="min-width: 150px">Tanggal</th>
               <th style="min-width: 90px">Action</th>
             </tr>
           </thead>
           <tbody>
-            @foreach ($floods as $f)
+            @foreach ($risks as $r)
+            @php
+              $date = date_create($r->date);
+            @endphp
             <tr>
               <td>{{$loop->iteration}}</td>
               <td style="min-width: 320px;">
-                <div class="symbol symbol-30px me-5" data-bs-toggle="modal" data-bs-target="#foto" onclick="foto('{{ $f->image }}')">
-                  <img src="/assets/img/flood/{{ $f->image }}" class="h-30 align-self-center of-cover rounded-0" alt="">
+                <div class="symbol symbol-30px me-5" data-bs-toggle="modal" data-bs-target="#foto" onclick="foto('{{ $r->image }}')">
+                  <img src="/assets/img/risk/{{ $r->image }}" class="h-30 align-self-center of-cover rounded-0" alt="">
                 </div>
-                {{ $f->title }}  
-              </td>
-              <td>{{ $f->city->name }}</td>
-              <td>
-                <span class="badge" style="background-color: {{ $f->cause->color }}">{{ $f->cause->name }}</span>
+                {{ $r->title }}  
               </td>
               <td>
-                <span class="badge badge-primary">{{ substr($f->latitude,0,6) }}</span>
-                <span class="badge badge-primary">{{ substr($f->longitude,0,6) }}</span>
+                <span class="badge badge-success">{{ $r->city->name }}</span>
               </td>
+              <td>{{ $r->area }}m²</td>
               <td>
-                <a href="#" class="btn btn-icon btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit" onclick="edit({{ $f->id }})"><i class="bi bi-pencil-fill"></i></a>
-                <a href="#" class="btn btn-icon btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#hapus" onclick="hapus({{ $f->id }})"><i class="fa fa-times"></i></a>
+                <span class="badge badge-primary">{{ substr($r->latitude,0,6) }}</span>
+                <span class="badge badge-primary">{{ substr($r->longitude,0,6) }}</span>
+              </td>
+              <td>{{date_format($date,"d/m/Y")}}</td>
+              <td>
+                <a href="#" class="btn btn-icon btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#edit" onclick="edit({{ $r->id }})"><i class="bi bi-pencil-fill"></i></a>
+                <a href="#" class="btn btn-icon btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#hapus" onclick="hapus({{ $r->id }})"><i class="fa fa-times"></i></a>
               </td>
             </tr>
             @endforeach
@@ -64,7 +69,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Buat laporan</h3>
+        <h3 class="modal-title">Buat laporan daerah rawan banjir</h3>
         <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
           <i class="bi bi-x-lg"></i>
         </div>
@@ -80,32 +85,32 @@
             </div>
             <div class="col-12 col-md-4">
               <label class="required fw-bold mb-2">Kota/kabupaten</label>
-              <select class="form-select" id="city1" name="city_id">
+              <select class="form-select" name="city_id" id="city1" required>
                 <option value="" selected disabled>- Pilih kota -</option>
                 @foreach ($cities as $c)
-                  <option value="{{ $c->id }}">{{ $c->name }}</option>
+                  <option value="{{ $c->id }}">{{ str_replace(['KABUPATEN ', 'KOTA '], '', $c->name) }}</option>
                 @endforeach
               </select>
             </div>
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-6">
               <label class="required fw-bold mb-2">Deskripsi</label>
               <textarea class="form-control" name="description" rows="8" required></textarea>
             </div>
-            <div class="col-12 col-md-7">
+            <div class="col-12 col-md-6">
               <label class="required fw-bold mb-2">Pilih lokasi banjir</label>
               <div id="map" style="height: 200px"></div>
               <input type="hidden" name="latitude" required>
               <input type="hidden" name="longitude" required>
             </div>
-            <div class="col-6 col-md-6">
-              <label class="required fw-bold mb-2">Penyebab banjir</label>
-              <select class="form-select" name="cause_id">
-                @foreach ($causes as $c)
-                  <option value="{{ $c->id }}">{{ $c->name }}</option>
-                @endforeach
-              </select>
+            <div class="col-12 col-md-4">
+              <label class="required fw-bold mb-2">Luas area banjir (m²)</label>
+              <input type="text" class="form-control" name="area" required>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-4">
+              <label class="required fw-bold mb-2">Tanggal banjir</label>
+              <input type="date" class="form-control" name="date" required>
+            </div>
+            <div class="col-12 col-md-4">
               <label class="required fw-bold mb-2">Upload foto</label>
               <input type="file" class="form-control" name="image" required>
             </div>
@@ -125,7 +130,7 @@
   <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title" id="et">Edit Kota</h3>
+          <h3 class="modal-title" id="et">Edit laporan</h3>
           <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
             <i class="bi bi-x-lg"></i>
           </div>
@@ -141,34 +146,34 @@
               </div>
               <div class="col-12 col-md-4">
                 <label class="required fw-bold mb-2">Kota/kabupaten</label>
-                <select class="form-select" id="city2" name="city_id">
+                <select class="form-select" name="city_id" id="city2" required>
                   <option value="" selected disabled>- Pilih kota -</option>
                   @foreach ($cities as $c)
-                    <option value="{{ $c->id }}">{{ $c->name }}</option>
+                    <option value="{{ $c->id }}">{{ str_replace(['KABUPATEN ', 'KOTA '], '', $c->name) }}</option>
                   @endforeach
                 </select>
               </div>
-              <div class="col-12 col-md-5">
+              <div class="col-12 col-md-6">
                 <label class="required fw-bold mb-2">Deskripsi</label>
                 <textarea class="form-control" name="description" rows="8" required></textarea>
               </div>
-              <div class="col-12 col-md-7">
+              <div class="col-12 col-md-6">
                 <label class="required fw-bold mb-2">Pilih lokasi banjir</label>
                 <div id="map2" style="height: 200px"></div>
                 <input type="hidden" name="latitude" required>
                 <input type="hidden" name="longitude" required>
               </div>
-              <div class="col-6 col-md-6">
-                <label class="required fw-bold mb-2">Penyebab banjir</label>
-                <select class="form-select" name="cause_id">
-                  @foreach ($causes as $c)
-                    <option value="{{ $c->id }}">{{ $c->name }}</option>
-                  @endforeach
-                </select>
+              <div class="col-12 col-md-4">
+                <label class="required fw-bold mb-2">Luas area banjir (m²)</label>
+                <input type="text" class="form-control" name="area" required>
               </div>
-              <div class="col-12 col-md-6">
-                <label class="required fw-bold mb-2">Upload foto</label>
-                <input type="file" class="form-control" name="image" required>
+              <div class="col-12 col-md-4">
+                <label class="required fw-bold mb-2">Tanggal banjir</label>
+                <input type="date" class="form-control" name="date" required>
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="fw-bold mb-2">Upload foto</label>
+                <input type="file" class="form-control" name="image">
               </div>
             </div>
           </div>
@@ -222,17 +227,17 @@
   </div>
 </div>
 
-
 @endsection
 
 @section('script')
 <script type="text/javascript">
   function foto(image){
-    $("#img-view").attr("src","/assets/img/flood/"+image);
+    $("#img-view").attr("src","/assets/img/risk/"+image);
   }
+
   function edit(id){
     $.ajax({
-      url: "/api/flood/"+id,
+      url: "/api/risk/"+id,
       type: 'GET',
       dataType: 'json', // added data type
       success: function(response) {
@@ -242,8 +247,9 @@
         $('#edit textarea[name="description"]').val(mydata.description);
         $('#edit input[name="latitude"]').val(mydata.latitude);
         $('#edit input[name="longitude"]').val(mydata.longitude);
-        $('#edit select[name="cause_id"]').val(mydata.cause_id);
         $('#edit select[name="city_id"]').val(mydata.city_id);
+        $('#edit input[name="area"]').val(mydata.area);
+        $('#edit input[name="date"]').val(mydata.date);
         $("#et").text("Edit "+mydata.title);
         L.marker([mydata.latitude, mydata.longitude]).addTo(map2).bindPopup(`Latitude: ${mydata.latitude}<br>Longitude: ${mydata.longitude}`).openPopup();
         map2.panTo(new L.LatLng(mydata.latitude, mydata.longitude));
@@ -254,7 +260,7 @@
   }
   function hapus(id){
     $.ajax({
-      url: "/api/flood/"+id,
+      url: "/api/risk/"+id,
       type: 'GET',
       dataType: 'json', // added data type
       success: function(response) {
@@ -265,7 +271,6 @@
       }
     });
   }
-
   $(document).ready(function () {
     $('#city1').change(function () {
       $.ajax({
@@ -295,6 +300,7 @@
     });
   });
 </script>
+
 <script>
   var map = L.map('map', {
     center: [-3.6, 113],
@@ -302,7 +308,7 @@
   });
 
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
   // Variable to store the current marker
@@ -329,11 +335,11 @@
 
   ///
   var map2 = L.map('map2', {
-    center: [-3.6, 113],
-    zoom: 4
+    center: [-7, 110],
+    zoom: 12
   });
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map2);
   let currentMarker2 = null;
   map2.on('click', (event) => {

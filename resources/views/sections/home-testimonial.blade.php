@@ -3,7 +3,7 @@
 
   <div class="container section-title" data-aos="fade-up">
     <h2>Ulasan</h2>
-    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    <p>Berikan dan lihat pendapat pengguna tentang Cegah Banjir</p>
   </div>
 
   <div class="container px-md-4">
@@ -24,27 +24,27 @@
               (object) [
                   'name' => 'John Doe',
                   'position' => 'Software Engineer',
-                  'review' => 'This platform has been a game-changer for my career. Highly recommend it!',
+                  'review' => 'Saya merasa lebih sadar lingkungan setelah menggunakan platform ini. Sekarang saya rutin melaporkan saluran air tersumbat di sekitar rumah',
               ],
               (object) [
                   'name' => 'Jane Smith',
                   'position' => 'Product Manager',
-                  'review' => 'An excellent tool for team collaboration. Very intuitive and user-friendly.',
+                  'review' => 'Fitur edukasinya sangat membantu saya memahami pentingnya menanam pohon untuk mencegah banjir. Saya sudah mulai menanam di halaman rumah',
               ],
               (object) [
                   'name' => 'Michael Brown',
                   'position' => 'UX Designer',
-                  'review' => 'The features are well thought out and have greatly improved my workflow.',
+                  'review' => 'Platform ini memudahkan kami dalam mengorganisasi kegiatan bersih-bersih drainase. Warga jadi lebih antusias ikut serta.',
               ],
               (object) [
                   'name' => 'Emily Johnson',
                   'position' => 'Data Analyst',
-                  'review' => 'The analytics tools provided have helped me uncover valuable insights. Amazing!',
+                  'review' => 'Dengan peta rawan banjir, kami dapat memprioritaskan area yang membutuhkan perhatian khusus. Ini sangat membantu aksi komunitas kami',
               ],
               (object) [
                   'name' => 'David Lee',
                   'position' => 'Project Manager',
-                  'review' => 'Managing my projects has never been this easy. A must-have tool for any team.',
+                  'review' => 'Kami sangat terbantu dengan laporan masyarakat melalui platform ini. Data yang terkumpul menjadi dasar penting untuk perbaikan drainase kota',
               ],
             ];
           @endphp

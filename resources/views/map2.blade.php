@@ -56,11 +56,16 @@
         
         // Create a popup for the marker
         var popupContent = `
-          <b>${risk.title}</b><br>
-          ${risk.description}<br>
-          Deskripsi: ${risk.description}<br>
-          Tanggal: ${risk.date}<br>
-          <button class='btn btn-sm btn-primary' onclick='pergi(${risk.id})'>Pergi</button>
+          <div class="my-3">
+            <img class="mb-2 rounded" src="/assets/img/risk/${risk.image}" style="width:100%; aspect-ratio: 16/9; object-fit: cover">
+            <b>${risk.title}</b><br>
+            Deskripsi: ${risk.description}<br>
+            Luas area banjir: ${risk.area}m²<br>
+            Tanggal banjir: ${risk.date}<br>
+            Pelapor: ${risk.user.name}<br>
+            <br>
+            <a class='btn btn-success text-white py-1 px-3' href="/daerah-rawan/${risk.id}"'>Detail laporan</a>
+          </div>
         `;
 
         // Bind the popup to the marker

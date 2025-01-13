@@ -19,6 +19,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/artikel', [PostController::class, 'blog']);
 Route::get('/artikel/{post:slug}', [PostController::class, 'post']);
 Route::get('/beranda', [HomeController::class, 'index']);
+Route::get('/daerah-rawan/{risk:id}', [ReportController::class, 'risk']);
 Route::get('/kegiatan', [ActivityController::class, 'index']);
 Route::get('/kegiatan/{activity:id}', [ActivityController::class, 'activity']);
 Route::get('/laporan/{flood:id}', [ReportController::class, 'flood']);

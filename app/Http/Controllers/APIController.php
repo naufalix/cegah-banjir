@@ -26,7 +26,7 @@ class APIController extends Controller
     return ApiFormatter::createApi(200,"Success",$flood);
   }
   public function floods(){
-    $floods = Flood::with('cause')->get();
+    $floods = Flood::with('cause','user')->get();
     return ApiFormatter::createApi(200, "Success", $floods);
   }
   public function followUp(FollowUp $data){
@@ -40,7 +40,7 @@ class APIController extends Controller
     return ApiFormatter::createApi(200,"Success",$risk);
   }
   public function risks(){
-    $risks = Risk::with('city')->get();
+    $risks = Risk::with('city','user')->get();
     return ApiFormatter::createApi(200, "Success", $risks);
   }
 }

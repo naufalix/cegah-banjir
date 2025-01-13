@@ -4,13 +4,17 @@
 
 <section id="maps" class="section py-0">
   <div class="m-2" style="position: absolute;z-index: 1000;right: 0;">
-    <div class="bg-white rounded">
-      <select name="" id="city1">
+    <div>
+      <select class="rounded mb-2" name="" id="city1">
         <option value="" selected disabled>- Pilih kota -</option>
         @foreach ($cities as $c)
           <option value="{{$c->id}}">{{$c->name}}</option>
         @endforeach
       </select>
+      <br>
+      <a href="/dashboard/lapor-banjir">
+        <button class="rounded bg-white" style="width: 100%">Buat laporan</button>
+      </a>
     </div>
   </div>
   <div id="map" class="" style="width: 100%; height: 80vh;"></div>

@@ -58,6 +58,9 @@
       transition: 0.5s;
       padding: 10px 20px;
     }
+    .header{
+      z-index: 1001;
+    }
 
     /* Testimonial */
     #testimonial img{

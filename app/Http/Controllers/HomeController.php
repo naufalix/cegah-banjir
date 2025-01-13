@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Activity;
 use App\Models\Cause;
+use App\Models\City;
 use App\Models\Flood;
 use App\Models\Meta;
 use App\Models\Post;
@@ -33,15 +34,16 @@ class HomeController extends Controller
 
     public function map(){
         $meta = $this->meta();
-        $meta['title'] = $post->title;
+        $meta['title'] = "Peta penyebab banjir";
         return view('map',[
             "meta" => $meta,
+            "cities" => City::whereNotNull('latitude')->orderBy('name', 'ASC')->get(),
         ]);
     }
 
     public function map2(){
         $meta = $this->meta();
-        $meta['title'] = $post->title;
+        $meta['title'] = "Peta daerah rawan banjir";
         return view('map2',[
             "meta" => $meta,
         ]);

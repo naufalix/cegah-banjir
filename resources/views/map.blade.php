@@ -3,8 +3,17 @@
 @section('content')
 
 <section id="maps" class="section py-0">
+  <div class="m-2" style="position: absolute;z-index: 1000;right: 0;">
+    <div class="bg-white rounded">
+      <select name="" id="city1">
+        <option value="" selected disabled>- Pilih kota -</option>
+        @foreach ($cities as $c)
+          <option value="{{$c->id}}">{{$c->name}}</option>
+        @endforeach
+      </select>
+    </div>
+  </div>
   <div id="map" class="" style="width: 100%; height: 80vh;"></div>
-
 </section>
 @endsection
 
@@ -17,16 +26,10 @@
     zoom: 5
   });
 
-  // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
-  // L.tileLayer.provider('Stadia.AlidadeSmoothDark').addTo(map);
-  // L.tileLayer.provider('CyclOSM').addTo(map);
-  // var CyclOSM = L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
-  //   maxZoom: 20,
-  //   attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  // });
+
 
   // Set leaflet marker
   $.ajax({
@@ -62,6 +65,22 @@
         marker.bindPopup(popupContent);
       });
     }
+  });
+
+  $(document).ready(function () {
+    $('#city1').change(function () {
+      $.ajax({
+        url: "/api/city/"+this.value,
+        type: 'GET',
+        dataType: 'json', // added data type
+        success: function(response) {
+          var mydata = response.data;
+          map.panTo(new L.LatLng(mydata.latitude, mydata.longitude));
+          map.setZoom(mydata.zoom);
+          map.panTo(new L.LatLng(mydata.latitude, mydata.longitude));
+        }
+      });
+    });
   });
 
 </script>

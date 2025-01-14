@@ -37,7 +37,7 @@
   </div>
 
   <div class="container copyright text-center mt-4">
-    <p>© <span>Copyright</span> <strong class="px-1 sitename">Cegah Banjir</strong> <span>All Rights Reserved</span></p>
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">Cegah Banjir</strong> <a href="https://docs.google.com/spreadsheets/d/1O3AKHt8eztY0lDeKrdfC4s-HcqmP52CcmJvxlKRHpjs/edit?usp=drive_link" target="_blank">Credit</a></p>
     <div class="credits d-none">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you've purchased the pro version. -->

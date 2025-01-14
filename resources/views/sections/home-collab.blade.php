@@ -9,8 +9,38 @@
   <div class="container">
 
     <div class="row text-center">
+
+      @foreach ($users as $u)
+      <a href="/kolaborator/{{$u->username}}">
+        <div class="col-md-3">
+          <div class="card" style="padding: 20px; border-radius: 20px">
+            
+            <div class="row">
+              <div class="col-3">
+                <img class="rounded-circle" src="/assets/img/user/{{ $u->image ? $u->image : 'default.webp' }}" alt="" style="width: 100%">
+              </div>
+              <div class="col-9 text-left d-flex">
+                <div class="my-auto">
+                  <p class="mb-0 fw-bold">{{ $u->name }}</p>
+                  <p class="mb-0">{{ $u->location }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-8 me-auto text-start d-flex fs-4">
+                <p class="text-success my-auto">{{ $u->point }} points</p>
+              </div>
+              <div class="col-4">
+                <img src="/assets/img/rank{{ $loop->iteration}}.png" alt="" style="width: 30px">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </a>
+      @endforeach
       
-      @for ($i = 1; $i < 4; $i++)
+      {{-- @for ($i = 1; $i < 4; $i++)
       <div class="col-md-4">
         <div class="card position-relative rounded-5">
           <div class="card-body p-4 text-white rounded-5" style="background-color: #30604C; padding-bottom: 50px !important">
@@ -39,7 +69,7 @@
           {{$i}}
         </div>
       </div>
-      @endfor
+      @endfor --}}
 
     </div>
     <br>

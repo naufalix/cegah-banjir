@@ -29,6 +29,7 @@ class HomeController extends Controller
             "count_post" => Post::all()->count(),
             "count_risk" => Risk::all()->count(),
             "count_user" => User::all()->count(),
+            "users" => User::orderBy('point', 'DESC')->limit(3)->get(),
         ]);
     }
 

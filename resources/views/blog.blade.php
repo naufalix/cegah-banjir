@@ -20,7 +20,7 @@
         $created = date_create($p->created_at);
       @endphp
       <div class="col-md-4">
-        <div class="card position-relative" style="border-radius:20px; border: 0px">
+        <div class="card position-relative mb-4" style="border-radius:20px; border: 0px">
           <div class="card-body" style="border-radius:20px; padding: 20px">
             <img class="mb-3" src="/assets/img/post/{{$p->image}}"
             style="border-radius:10px; width: 100%; aspect-ratio: 16/9; object-fit: cover;">

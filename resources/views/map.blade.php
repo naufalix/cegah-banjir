@@ -63,7 +63,7 @@
             <b>${flood.title}</b><br>
             Deskripsi: ${flood.description}<br>
             Penyebab: <span class="badge" style="background-color: ${flood.cause.color}">${flood.cause.name}</span><br>
-            Pelapor: <a href="/kolaborator/${risk.user.username}">${risk.user.name}</a><br>
+            Pelapor: <a href="/kolaborator/${flood.user.username}">${flood.user.name}</a><br>
             <br>
             <a class='btn btn-success text-white py-1 px-3' href="/laporan/${flood.id}"'>Detail laporan</a>
           </div>

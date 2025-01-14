@@ -12,6 +12,13 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    public function flood() {
+        return $this->hasMany(Flood::class, 'user_id');
+    }
+    public function risk() {
+        return $this->hasMany(Risk::class, 'user_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

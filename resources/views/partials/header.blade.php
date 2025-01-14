@@ -20,7 +20,19 @@
         <li><a href="/laporan-banjir">Laporan</a></li>
         <li><a href="/artikel">Edukasi</a></li>
         <li><a href="/kegiatan">Kegiatan</a></li>
-        <a href="/login" class="btn btn-success btn-sm text-white" style="padding: 4px 16px">Masuk</a>
+        @if(Auth::check())
+          <li class="dropdown profile-menu">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="/assets/img/user/{{ Auth::user()->image ?? asset('default.webp') }}" alt="User Profile" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;">
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/dashboard/profil">Profile</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </li>
+        @else
+          <a href="/login" class="btn btn-success btn-sm text-white" style="padding: 4px 16px">Masuk</a>
+        @endif
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>

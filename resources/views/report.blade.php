@@ -8,7 +8,6 @@
   </div>
 
   <div class="container px-md-5">
-
     <div class="card p-4">
       <div class="table-responsive">
         <table id="myTable" class="table table-striped table-hover table-rounded border gs-7">
@@ -17,6 +16,7 @@
               <th class="d-none">No.</th>
               <th style="min-width: 90px">Waktu</th>
               <th style="min-width: 150px">Detail lokasi</th>
+              <th style="min-width: 150px">Kota/Kabupaten</th>
               <th style="min-width: 300px">Penyebab banjir</th>
               <th style="min-width: 120px">Pelapor</th>
               <th style="min-width: 120px">Status</th>
@@ -31,6 +31,7 @@
               <td class="d-none">{{$loop->iteration}}</td>
               <td>{{date_format($created,"d/m/Y")}}</td>
               <td><a href="/laporan/{{ $f->id }}">{{ $f->title }}</a></td>
+              <td>{{ $f->city->name }}</a></td>
               <td>
                 <span class="badge" style="background-color: {{ $f->cause->color }}">{{ $f->cause->name }}</span>
               </td>
@@ -42,7 +43,50 @@
         </table>
       </div>
     </div>
-    
+  </div>
+
+  <br><br>
+
+  <div class="container section-title p-0" data-aos="fade-up">
+    <h2>Laporan daerah rawan banjir</h2>
+  </div>
+
+  <div class="container px-md-5">
+    <div class="card p-4">
+      <div class="table-responsive">
+        <table id="myTable2" class="table table-striped table-hover table-rounded border gs-7">
+          <thead>
+            <tr class="fw-bold text-center">
+              <th class="d-none">No.</th>
+              <th style="min-width: 150px">Tanggal banjir</th>
+              <th style="min-width: 150px">Detail lokasi</th>
+              <th style="min-width: 150px">Kota/Kabupaten</th>
+              <th style="min-width: 150px">Deskripsi</th>
+              <th style="min-width: 170px">Luas area banjir (m²)</th>
+              <th style="min-width: 120px">Pelapor</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($risks as $r)
+            @php
+              $date = date_create($r->date);
+            @endphp
+            <tr class="text-center">
+              <td class="d-none">{{$loop->iteration}}</td>
+              <td>{{date_format($date,"d F Y")}}</td>
+              <td><a href="/daerah-rawan/{{ $r->id }}">{{ $r->title }}</a></td>
+              <td>{{ $r->city->name }}</a></td>
+              <td>{{ $r->description }}</a></td>
+              <td>
+                <span class="badge bg-primary">{{ $r->area }}m²</span>
+              </td>
+              <td><a href="/kolaborator/{{ $r->user->username }}">{{ $r->user->name }}</a></td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
 </section>
@@ -59,7 +103,19 @@
           "previous": "<",
           "next": ">"
         }
-      }
+      },
+    });
+  });
+  $(document).ready(function () {
+    $('#myTable2').DataTable({
+      "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All Pages"]],
+      "pageLength": 25,
+      "language": {
+        "paginate": {
+          "previous": "<",
+          "next": ">"
+        }
+      },
     });
   });
 </script>

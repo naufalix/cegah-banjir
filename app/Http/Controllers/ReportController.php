@@ -19,6 +19,7 @@ class ReportController extends Controller
         return view('report',[
             "meta" => $meta,
             "floods" => Flood::orderBy('id', 'DESC')->get(),
+            "risks" => Risk::orderBy('id', 'DESC')->get(),
         ]);
     }
 

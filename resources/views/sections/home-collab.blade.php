@@ -11,15 +11,15 @@
     <div class="row text-center">
 
       @foreach ($users as $u)
-      <a href="/kolaborator/{{$u->username}}">
-        <div class="col-md-3">
+      <div class="col-md-3">
+        <a href="/kolaborator/{{$u->username}}">
           <div class="card" style="padding: 20px; border-radius: 20px">
             
             <div class="row">
               <div class="col-3">
                 <img class="rounded-circle" src="/assets/img/user/{{ $u->image ? $u->image : 'default.webp' }}" alt="" style="width: 100%">
               </div>
-              <div class="col-9 text-left d-flex">
+              <div class="col-9 text-start d-flex">
                 <div class="my-auto">
                   <p class="mb-0 fw-bold">{{ $u->name }}</p>
                   <p class="mb-0">{{ $u->location }}</p>
@@ -36,8 +36,8 @@
             </div>
 
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
       @endforeach
       
       {{-- @for ($i = 1; $i < 4; $i++)

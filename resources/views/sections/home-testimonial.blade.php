@@ -22,28 +22,28 @@
           @php
             $testimonials = [
               (object) [
-                  'name' => 'John Doe',
-                  'position' => 'Software Engineer',
+                  'name' => 'Haniefa',
+                  'position' => 'Individu',
                   'review' => 'Saya merasa lebih sadar lingkungan setelah menggunakan platform ini. Sekarang saya rutin melaporkan saluran air tersumbat di sekitar rumah',
               ],
               (object) [
-                  'name' => 'Jane Smith',
-                  'position' => 'Product Manager',
+                  'name' => 'Afianada',
+                  'position' => 'Individu',
                   'review' => 'Fitur edukasinya sangat membantu saya memahami pentingnya menanam pohon untuk mencegah banjir. Saya sudah mulai menanam di halaman rumah',
               ],
               (object) [
-                  'name' => 'Michael Brown',
-                  'position' => 'UX Designer',
+                  'name' => 'Green Forest',
+                  'position' => 'Komunitas',
                   'review' => 'Platform ini memudahkan kami dalam mengorganisasi kegiatan bersih-bersih drainase. Warga jadi lebih antusias ikut serta.',
               ],
               (object) [
-                  'name' => 'Emily Johnson',
-                  'position' => 'Data Analyst',
+                  'name' => 'BPBD Semarang',
+                  'position' => 'Pemerintah',
                   'review' => 'Dengan peta rawan banjir, kami dapat memprioritaskan area yang membutuhkan perhatian khusus. Ini sangat membantu aksi komunitas kami',
               ],
               (object) [
-                  'name' => 'David Lee',
-                  'position' => 'Project Manager',
+                  'name' => 'BPBD Malang',
+                  'position' => 'Pemerintah',
                   'review' => 'Kami sangat terbantu dengan laporan masyarakat melalui platform ini. Data yang terkumpul menjadi dasar penting untuk perbaikan drainase kota',
               ],
             ];

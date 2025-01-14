@@ -3,9 +3,12 @@
 @section('content')
 <section id="home-post" class="section bg-light">
 
-  <div class="container section-title" data-aos="fade-up">
+  <div class="container section-title pb-3" data-aos="fade-up">
     <h2>Artikel Edukasi</h2>
-    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    <p>Pelajari penyebab banjir dan cara efektif mengatasinya.</p>
+    <div class="text-center mt-4">
+      <a class="btn btn-success" href="/dashboard/artikel">Buat artikel</a>
+    </div> 
   </div>
 
   <div class="container px-md-5">

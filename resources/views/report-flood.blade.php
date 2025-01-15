@@ -20,6 +20,8 @@
         </div>
         
         <p>{{$flood->description}}</p>
+
+        <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-exclamation-triangle-fill"></i> Laporkan</button>
         
       </div>
 

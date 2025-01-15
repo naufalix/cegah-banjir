@@ -19,6 +19,8 @@
         @endphp
         <p class="mb-0"><i class="bi bi-calendar-event"></i> {{date_format($sd,"d/m/Y")}} - {{date_format($ed,"d/m/Y")}}</p>
         <p><i class="bi bi-geo-alt"></i> {{$activity->location}}</p>
+        <br>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-exclamation-triangle-fill"></i> Laporkan</button>
       </div>
 
       <div class="col-lg-4">

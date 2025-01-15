@@ -13,12 +13,12 @@
 
       @php
         $statistics = [
-          (object) ['name' => 'Penyebab banjir',      'icon' => 'bi bi-geo-alt',                  'count' => $count_cause-1,],
-          (object) ['name' => 'Daerah rawan banjir',  'icon' => 'bi bi-map-fill',                 'count' => $count_risk,],
-          (object) ['name' => 'Kolaborator',          'icon' => 'bi bi-person-fill',              'count' => $count_user,],
-          (object) ['name' => 'Laporan',              'icon' => 'bi bi-file-earmark-text-fill',   'count' => $count_risk+$count_flood,],
-          (object) ['name' => 'Artikel edukasi',      'icon' => 'bi bi-book-half',                'count' => $count_post,],
-          (object) ['name' => 'Kegiatan',             'icon' => 'bi bi-calendar2-week',           'count' => $count_activity,],
+          (object) ['name'=>'Penyebab banjir',      'icon'=>'bi bi-geo-alt',                  'url'=>'/peta-banjir',        'count' => $count_cause-1,],
+          (object) ['name'=>'Daerah rawan banjir',  'icon'=>'bi bi-map-fill',                 'url'=>'/peta-daerah-rawan',  'count' => $count_risk,],
+          (object) ['name'=>'Kolaborator',          'icon'=>'bi bi-person-fill',              'url'=>'/kolaborator',        'count' => $count_user,],
+          (object) ['name'=>'Laporan',              'icon'=>'bi bi-file-earmark-text-fill',   'url'=>'/laporan-banjir',     'count' => $count_risk+$count_flood,],
+          (object) ['name'=>'Artikel edukasi',      'icon'=>'bi bi-book-half',                'url'=>'/artikel',            'count' => $count_post,],
+          (object) ['name'=>'Kegiatan',             'icon'=>'bi bi-calendar2-week',           'url'=>'/kegiatan',           'count' => $count_activity,],
         ];
       @endphp
 

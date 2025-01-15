@@ -23,7 +23,7 @@
         @if(Auth::check())
           <li class="dropdown profile-menu">
             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="/assets/img/user/{{ Auth::user()->image ?? asset('default.webp') }}" alt="User Profile" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;">
+              <img src="/assets/img/user/{{ Auth::user()->image ?? 'default.webp' }}" alt="User Profile" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;">
             </a>
             <ul class="dropdown-menu">
               <li><a href="/dashboard/profil">Profile</a></li>

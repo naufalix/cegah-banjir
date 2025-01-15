@@ -22,7 +22,7 @@
       </div>
 
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/img/about-img.svg" alt="" class="img-fluid">
+        <img src="assets/img/about-img.webp" alt="" class="img-fluid">
       </div>
 
     </div>

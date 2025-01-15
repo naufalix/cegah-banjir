@@ -9,7 +9,7 @@
           <span class="sitename">Cegah Banjir</span>
         </a>
         <div class="footer-contact pt-3">
-          <p>Platform edukasi dan mitigasi penyebab banjir</p>
+          <p>Kolaborasi antara pemerintah dan masyarakat penting untuk mengurangi risiko banjir. Platform ini menyediakan alat dan informasi untuk bersama-sama mengatasi penyebab banjir. Mari menciptakan lingkungan yang lebih aman dan bersih!</p>
         </div>
       </div>
 

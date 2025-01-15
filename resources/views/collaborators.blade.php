@@ -28,7 +28,14 @@
               <td class="d-none">{{$loop->iteration}}</td>
               <td>{{ $u->name }}</td>
               <td>
-                <span class="badge bg-success">{{ $u->type }}</span>
+                <span class="badge 
+                  @if($u->type == 'individu') bg-primary 
+                  @elseif($u->type == 'komunitas') bg-warning 
+                  @elseif($u->type == 'pemerintah') bg-danger 
+                  @else bg-success 
+                  @endif">
+                  {{ $u->type }}
+                </span>
               </td>
               <td>{{ $u->location }}</td>
               <td><span class="badge bg-success">{{ $u->point }}</span></td>

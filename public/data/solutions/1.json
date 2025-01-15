@@ -1,0 +1,27 @@
+[
+  {
+    "cause_id": 1,
+    "title": "Pembersihan Rutin",
+    "body": "Lakukan pembersihan drainase secara berkala untuk menghindari penumpukan sampah dan sedimen."
+  },
+  {
+    "cause_id": 1,
+    "title": "Edukasi Masyarakat",
+    "body": "Tingkatkan kesadaran masyarakat untuk tidak membuang sampah ke saluran air."
+  },
+  {
+    "cause_id": 1,
+    "title": "Peningkatan Kapasitas Drainase",
+    "body": "Perbesar kapasitas saluran drainase di area rawan banjir untuk menampung lebih banyak air."
+  },
+  {
+    "cause_id": 1,
+    "title": "Pengelolaan Sampah",
+    "body": "Sediakan tempat sampah di area strategis untuk mengurangi sampah yang masuk ke drainase."
+  },
+  {
+    "cause_id": 1,
+    "title": "Filter atau Jeruji Sampah",
+    "body": "Pasang filter di mulut saluran drainase untuk menyaring sampah sebelum masuk lebih jauh."
+  }
+]

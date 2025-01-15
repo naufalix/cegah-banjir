@@ -1,0 +1,37 @@
+[
+  {
+    "cause_id": 4,
+    "title": "Pengelolaan Sampah Terintegrasi",
+    "body": "Sediakan sistem pengelolaan sampah berbasis pemilahan, pengangkutan rutin, dan daur ulang untuk mengurangi jumlah sampah yang dibuang sembarangan."
+  },
+  {
+    "cause_id": 4,
+    "title": "Edukasi Masyarakat",
+    "body": "Tingkatkan kesadaran tentang dampak buruk membuang sampah ke saluran air melalui kampanye dan program komunitas."
+  },
+  {
+    "cause_id": 4,
+    "title": "Penerapan Sanksi",
+    "body": "Berlakukan denda tegas bagi individu atau pihak yang membuang sampah di saluran air atau sungai."
+  },
+  {
+    "cause_id": 4,
+    "title": "Pemasangan Jaring Sampah",
+    "body": "Pasang jaring atau perangkap sampah di saluran air untuk mencegah sampah masuk lebih jauh ke sistem drainase."
+  },
+  {
+    "cause_id": 4,
+    "title": "Bank Sampah dan Insentif",
+    "body": "Bangun bank sampah yang memberikan insentif ekonomi kepada masyarakat untuk mendaur ulang sampah."
+  },
+  {
+    "cause_id": 4,
+    "title": "Teknologi Pengangkut Sampah",
+    "body": "Gunakan kendaraan atau drone pengumpul sampah otomatis di area rawan sampah, terutama di sungai dan saluran air."
+  },
+  {
+    "cause_id": 4,
+    "title": "Pembersihan Massal",
+    "body": "Adakan gotong royong rutin untuk membersihkan saluran air dan sungai dari sampah."
+  }
+]

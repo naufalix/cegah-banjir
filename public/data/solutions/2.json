@@ -1,0 +1,32 @@
+[
+  {
+    "cause_id": 2,
+    "title": "Pengelolaan Tata Ruang yang Ketat",
+    "body": "Terapkan zonasi yang membatasi pembangunan di area resapan air dan wajibkan ruang terbuka hijau (minimal 30% dari total area)."
+  },
+  {
+    "cause_id": 2,
+    "title": "Sistem Drainase Berkelanjutan",
+    "body": "Desain ulang sistem drainase kota dengan teknologi permeabel (pervious pavement) dan kolam retensi untuk menampung air hujan."
+  },
+  {
+    "cause_id": 2,
+    "title": "Reforestasi dan Penghijauan",
+    "body": "Lakukan penghijauan di kawasan urban untuk meningkatkan kemampuan resapan air dan mengurangi limpasan permukaan."
+  },
+  {
+    "cause_id": 2,
+    "title": "Pengendalian Pertumbuhan Kota",
+    "body": "Batasi ekspansi kota secara horizontal dengan mengoptimalkan pembangunan vertikal di pusat kota."
+  },
+  {
+    "cause_id": 2,
+    "title": "Edukasi dan Kolaborasi",
+    "body": "Tingkatkan kesadaran masyarakat dan libatkan mereka dalam perencanaan kota yang ramah lingkungan."
+  },
+  {
+    "cause_id": 2,
+    "title": "Infrastruktur Hijau",
+    "body": "Bangun taman kota, kebun atap, dan bio-swale untuk mendukung penyerapan air secara alami."
+  }
+]

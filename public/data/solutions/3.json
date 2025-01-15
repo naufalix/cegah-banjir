@@ -1,0 +1,32 @@
+[
+  {
+    "cause_id": 3,
+    "title": "Normalisasi Sungai",
+    "body": "Lakukan pengerukan rutin untuk menghilangkan sedimen dan sampah yang mengurangi kapasitas aliran sungai."
+  },
+  {
+    "cause_id": 3,
+    "title": "Reboisasi Daerah Aliran Sungai (DAS)",
+    "body": "Tanam pohon di sepanjang DAS untuk mengurangi erosi tanah yang menyebabkan sedimentasi."
+  },
+  {
+    "cause_id": 3,
+    "title": "Pengendalian Aktivitas di Sekitar Sungai",
+    "body": "Batasi kegiatan seperti penambangan pasir ilegal dan pembukaan lahan di sekitar sungai."
+  },
+  {
+    "cause_id": 3,
+    "title": "Pembuatan Kolam Retensi",
+    "body": "Bangun kolam retensi atau waduk kecil di hulu untuk menampung air sebelum mengalir ke sungai."
+  },
+  {
+    "cause_id": 3,
+    "title": "Pengelolaan Sampah",
+    "body": "Sediakan sistem pengelolaan sampah yang efektif untuk mencegah pembuangan sampah ke sungai."
+  },
+  {
+    "cause_id": 3,
+    "title": "Pemasangan Bio-Engineering",
+    "body": "Gunakan teknologi bio-engineering seperti geotekstil dan tanaman penahan erosi di tepi sungai untuk mengurangi sedimentasi."
+  }
+]

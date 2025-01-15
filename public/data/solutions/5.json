@@ -1,0 +1,37 @@
+[
+  {
+    "cause_id": 5,
+    "title": "Pembangunan Infrastruktur Penampung Air",
+    "body": "Bangun kolam retensi, waduk, dan embung untuk menampung kelebihan air hujan."
+  },
+  {
+    "cause_id": 5,
+    "title": "Sistem Drainase yang Memadai",
+    "body": "Tingkatkan kapasitas dan efisiensi sistem drainase kota agar mampu mengalirkan air lebih cepat."
+  },
+  {
+    "cause_id": 5,
+    "title": "Permeabilitas Permukaan",
+    "body": "Gunakan material permeabel untuk jalan dan trotoar guna meningkatkan daya serap tanah terhadap air hujan."
+  },
+  {
+    "cause_id": 5,
+    "title": "Reboisasi dan Penghijauan",
+    "body": "Tingkatkan jumlah ruang terbuka hijau untuk menyerap air hujan secara alami."
+  },
+  {
+    "cause_id": 5,
+    "title": "Sistem Peringatan Dini",
+    "body": "Pasang sistem peringatan dini berbasis data curah hujan untuk mempersiapkan tindakan pencegahan banjir."
+  },
+  {
+    "cause_id": 5,
+    "title": "Perencanaan Tata Kota Berbasis Iklim",
+    "body": "Rancang kota dengan memperhitungkan intensitas curah hujan dan perubahan iklim untuk mengurangi risiko genangan."
+  },
+  {
+    "cause_id": 5,
+    "title": "Manajemen Air Hujan Skala Komunitas",
+    "body": "Terapkan teknologi seperti sumur resapan dan biopori di lingkungan permukiman untuk membantu menyerap air hujan."
+  }
+]

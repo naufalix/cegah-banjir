@@ -18,6 +18,7 @@
       @foreach ($posts as $p)
       @php
         $created = date_create($p->created_at);
+        $body = str_replace('#', '', $p->body)
       @endphp
       <div class="col-md-4">
         <div class="card position-relative mb-4" style="border-radius:20px; border: 0px">
@@ -29,7 +30,7 @@
                 <a href="/artikel/{{$p->slug}}">{{$p->title}}</a>
               </h5>
               <p style="font-size: 14px">
-                {{ strlen($p->body) > 100 ? substr($p->body, 0, 100) . '...' : $p->body }}
+                {{ strlen($body) > 100 ? substr($body, 0, 100) . '...' : $body }}  
               </p>
               <div class="d-flex" style="font-size: 14px">
                 <img class="rounded-circle" src="/assets/img/user/{{ $p->user->image ? $p->user->image : 'default.webp' }}" alt="" width="25" height="25">

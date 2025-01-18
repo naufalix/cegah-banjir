@@ -19,11 +19,11 @@
           <thead>
             <tr class="fw-bold fs-6 text-gray-800 border-bottom border-gray-200">
               <th class="d-none">Sort</th>
-              <th>Judul</th>
+              <th style="min-width: 120px">Judul</th>
               <th style="min-width: 120px">Isi artikel</th>
               <th style="min-width: 120px">Penulis</th>
-              <th style="min-width: 120px">Terakhir diubah</th>
-              <th style="min-width: 90px">Action</th>
+              <th style="width: 100px">Terakhir diubah</th>
+              <th style="width: 90px">Action</th>
             </tr>
           </thead>
           <tbody>

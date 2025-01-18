@@ -22,7 +22,7 @@
               <th style="min-width: 300px">Deskripsi</th>
               <th style="min-width: 120px">Penyebab banjir</th>
               <th style="min-width: 120px">Nama Pelapor</th>
-              <th style="min-width: 100px">Tanggal banjir</th>
+              <th style="min-width: 150px">Tanggal banjir</th>
               <th style="min-width: 90px">Action</th>
             </tr>
           </thead>
@@ -41,7 +41,7 @@
               <td>{{ $f->user->name }}</td>
               <td>{{date_format($fdate,"d/m/Y H:i")}}</td>
               <td>
-                <a href="/laporan/{{ $f->id }}" class="badge badge-primary" target="_blank">Lihat detail</a>
+                <a href="/laporan/{{ $f->id }}" class="badge badge-primary mb-1" target="_blank">Lihat detail</a>
                 <a href="#" class="badge badge-primary" data-bs-toggle="modal" data-bs-target="#tambah" onclick="tambah({{ $f->id }})">Tindak lanjut</a>
               </td>
             </tr>

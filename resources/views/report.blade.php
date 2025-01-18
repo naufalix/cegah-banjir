@@ -17,9 +17,10 @@
               <th style="min-width: 90px">Waktu</th>
               <th style="min-width: 150px">Detail lokasi</th>
               <th style="min-width: 150px">Kota/Kabupaten</th>
-              <th style="min-width: 300px">Penyebab banjir</th>
+              <th style="min-width: 200px">Penyebab banjir</th>
               <th style="min-width: 120px">Pelapor</th>
               <th style="min-width: 120px">Status</th>
+              <th style="min-width: 120px">Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -37,6 +38,9 @@
               </td>
               <td><a href="/kolaborator/{{ $f->user->username }}">{{ $f->user->name }}</a></td>
               <td>{{ $f->status == 1 ? 'Sudah ditindak' : 'Belum ditindak' }}</td>
+              <td>
+                <a class="btn py-1 px-3 {{ $f->status == 0 ? 'btn-secondary disabled' : 'btn-warning'}}" href="/dashboard/tindak-lanjut" style="font-size: 12px">Tindak</a>
+              </td>
             </tr>
             @endforeach
           </tbody>

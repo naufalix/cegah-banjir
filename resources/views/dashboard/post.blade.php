@@ -30,6 +30,7 @@
             @foreach ($posts as $p)
             @php
               $updated = date_create($p->updated_at);
+              $body = str_replace('#', '', $p->body)
             @endphp
             <tr>
               <td class="d-none">{{$loop->iteration}}</td>
@@ -39,7 +40,7 @@
                 </div>
                 {{ $p->title }}  
               </td>
-              <td>{{ strlen($p->body) > 100 ? substr($p->body, 0, 100) . '...' : $p->body }}</td>
+              <td>{{ strlen($body) > 100 ? substr($body, 0, 100) . '...' : $body }}</td>
               <td>{{ $p->writer }}</td>
               <td>{{date_format($updated,"d/m/Y H:i")}}</td>
               <td>

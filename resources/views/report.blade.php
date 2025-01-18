@@ -39,7 +39,7 @@
               <td><a href="/kolaborator/{{ $f->user->username }}">{{ $f->user->name }}</a></td>
               <td>{{ $f->status == 1 ? 'Sudah ditindak' : 'Belum ditindak' }}</td>
               <td>
-                <a class="btn py-1 px-3 {{ $f->status == 0 ? 'btn-secondary disabled' : 'btn-warning'}}" href="/dashboard/tindak-lanjut" style="font-size: 12px">Tindak</a>
+                <a class="btn py-1 px-3 {{ $f->status == 0 ? 'btn-warning' : 'btn-secondary disabled'}}" href="/dashboard/tindak-lanjut" style="font-size: 12px">Tindak</a>
               </td>
             </tr>
             @endforeach

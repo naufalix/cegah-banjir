@@ -18,11 +18,8 @@
             <div id="map" class="rounded" style="width: 100%; aspect-ratio: 16 / 10;"></div>
           </div>
         </div>
-        
         <p>{{$flood->description}}</p>
-
-        <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-exclamation-triangle-fill"></i> Laporkan</button>
-        
+        @include('sections.form-report') 
       </div>
 
       <div class="col-lg-4">

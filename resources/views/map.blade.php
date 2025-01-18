@@ -30,14 +30,7 @@
       </div>
       <div class="modal-body">
         <ol id="rekomendasi">
-          <li>
-            <p class="mb-0 fw-bold">vnnkjv</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, omnis, mollitia rem vitae enim rerum aliquam consectetur reiciendis reprehenderit minus recusandae repellat magnam voluptatem, quos officia iusto et quam voluptates?</p>
-          </li>
-          <li>
-            <p class="mb-0 fw-bold">vnnkjv</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, omnis, mollitia rem vitae enim rerum aliquam consectetur reiciendis reprehenderit minus recusandae repellat magnam voluptatem, quos officia iusto et quam voluptates?</p>
-          </li>
+          
         </ol>
       </div>
     </div>

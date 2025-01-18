@@ -1,0 +1,52 @@
+[
+  {
+    "cause_id": 8,
+    "title": "Hindari Area Ini Saat Hujan Deras",
+    "body": "Area ini sering tergenang air selama hujan lebat, sehingga tidak aman untuk dilalui."
+  },
+  {
+    "cause_id": 8,
+    "title": "Gunakan Rute Alternatif",
+    "body": "Pilih rute lain yang lebih tinggi atau tidak rawan banjir jika ingin bepergian selama musim hujan."
+  },
+  {
+    "cause_id": 8,
+    "title": "Waspadai Jalan yang Tidak Terlihat Saat Tergenang",
+    "body": "Jangan melintasi area dengan genangan tinggi, terutama jika tidak terlihat kedalaman airnya."
+  },
+  {
+    "cause_id": 8,
+    "title": "Evakuasi ke Tempat Lebih Aman Saat Banjir",
+    "body": "Pindahkan keluarga dan barang berharga ke area evakuasi yang telah disediakan."
+  },
+  {
+    "cause_id": 8,
+    "title": "Periksa Sistem Drainase di Sekitar Lokasi",
+    "body": "Laporkan jika ada saluran air yang tersumbat di sekitar area rawan banjir ini."
+  },
+  {
+    "cause_id": 8,
+    "title": "Parkir Kendaraan di Area yang Lebih Tinggi",
+    "body": "Jangan tinggalkan kendaraan di lokasi ini selama musim hujan untuk menghindari kerusakan akibat banjir."
+  },
+  {
+    "cause_id": 8,
+    "title": "Hindari Beraktivitas di Dekat Sungai atau Saluran Air",
+    "body": "Daerah ini berdekatan dengan sungai yang berpotensi meluap saat hujan deras."
+  },
+  {
+    "cause_id": 8,
+    "title": "Pastikan Barang-Barang di Rumah Disimpan di Tempat Tinggi",
+    "body": "Jika tinggal di sekitar lokasi ini, siapkan barang-barang berharga di tempat aman dan tinggi."
+  },
+  {
+    "cause_id": 8,
+    "title": "Gunakan Perahu atau Alat Transportasi Darurat Jika Diperlukan",
+    "body": "Jika lokasi sudah tergenang, gunakan perahu atau bantuan transportasi lain yang aman."
+  },
+  {
+    "cause_id": 8,
+    "title": "Ikuti Informasi dan Arahan dari BPBD Setempat",
+    "body": "Tetap terhubung dengan informasi terkini mengenai potensi banjir dan evakuasi dari instansi terkait."
+  }
+]

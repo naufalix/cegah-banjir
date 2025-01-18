@@ -19,6 +19,23 @@
   </div>
   <div id="map" class="" style="width: 100%; height: 80vh;"></div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="solusi" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Rekomendasi solusi dari AI</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ol id="rekomendasi">
+          
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection
 
 @section('script')
@@ -64,7 +81,10 @@
             Tanggal banjir: ${risk.date}<br>
             Pelapor: <a href="/kolaborator/${risk.user.username}">${risk.user.name}</a><br>
             <br>
-            <a class='btn btn-success text-white py-1 px-3' href="/daerah-rawan/${risk.id}"'>Detail laporan</a>
+            <a class='btn btn-success text-white py-1 px-3' href="/daerah-rawan/${risk.id}"' style="font-size:10px">Detail laporan</a>
+            <button class='btn btn-primary text-white py-1 px-3' onclick="solution(8)"'  data-bs-toggle="modal" data-bs-target="#solusi" style="font-size:10px">
+              <i class="bi bi-stars"></i> Rekomendasi dari AI
+            </button>
           </div>
         `;
 
@@ -89,6 +109,37 @@
       });
     });
   });
+
+  function solution(cause_id) {
+    $.ajax({
+      url: "/data/solutions/" + cause_id + ".json",
+      type: 'GET',
+      dataType: 'json',
+      success: function(response) {
+        // Shuffle the data to randomize it
+        var shuffledData = response.sort(() => 0.5 - Math.random());
+        
+        // Get the first two items
+        var randomData = shuffledData.slice(0, 3);
+        
+        // Clear the current list
+        $("#rekomendasi").empty();
+        
+        // Populate the list with the random data
+        randomData.forEach(function(item) {
+          $("#rekomendasi").append(`
+            <li>
+              <p class="mb-0 fw-bold">${item.title}</p>
+              <p>${item.body}</p>
+            </li>
+          `);
+        });
+      },
+      error: function(xhr, status, error) {
+        console.error("Error fetching data:", error);
+      }
+    });
+  }
 
 </script>
 

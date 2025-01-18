@@ -32,7 +32,7 @@
               </div>
               <div class="col-9">
                 <p class="fs-3 mb-2">{{$s->count}}+</p>
-                <h4 class="mb-0 fs-6"><a href="/beranda#home-map" class="stretched-link">{{$s->name}}</a></h4>
+                <h4 class="mb-0 fs-6"><a href="{{$s->url}}" class="stretched-link">{{$s->name}}</a></h4>
               </div>
             </div>
           

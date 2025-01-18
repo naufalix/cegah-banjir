@@ -21,7 +21,9 @@
           </a>
           <p class="mb-0" style="font-size: 14px"><i class="bi bi-calendar-event me-2"></i>{{date_format($created,"d F Y")}}</p>
         </div>
-        <p>{{$post->body}}</p>
+        <div class="markdown">
+          {!! Illuminate\Support\Str::markdown($post->body) !!} 
+        </div>
         <br>
         
         <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="bi bi-exclamation-triangle-fill"></i> Laporkan</button>

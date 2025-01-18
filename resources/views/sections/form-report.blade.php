@@ -32,7 +32,7 @@
 
     // Format pesan WhatsApp
     const message = `Halo, saya ingin laporkan mengenai konten pada website CegahBanjir dengan alasan ${encodeURIComponent(reason)}.%0AURL = ${encodeURIComponent(currentUrl)}`;
-    const whatsappUrl = `https://wa.me/085234006051?text=${message}`;
+    const whatsappUrl = `https://wa.me/6285234006051?text=${message}`;
 
     // Redirect ke WhatsApp
     window.open(whatsappUrl, '_blank');

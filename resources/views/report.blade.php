@@ -81,7 +81,7 @@
               <td><a href="/daerah-rawan/{{ $r->id }}">{{ $r->title }}</a></td>
               <td>{{ $r->city->name }}</td>
               <td>
-                {{ strlen($r->description) > 50 ? substr($r->description, 0, 50) . '...' : $r->description }}  
+                {{ strlen($r->description) > 40 ? substr($r->description, 0, 40) . '...' : $r->description }}  
               </td>
               <td>
                 <span class="badge bg-primary">{{ $r->area }}m²</span>

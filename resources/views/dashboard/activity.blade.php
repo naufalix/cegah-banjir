@@ -46,7 +46,15 @@
                 <b>Penanggungjawab : </b>{{ $a->pic_name }} <br>
                 <b>No telepon : </b>{{ $a->phone }}
               </td>
-              <td><span class="badge badge-primary">{{ $a->location }}</span></td>
+              <td>
+                <span class="badge badge-primary">
+                  @if ($a->city)
+                    {{ $a->city->name }}
+                  @else
+                    {{ $a->location }}
+                  @endif
+                </span> 
+              </td>
               <td>{{date_format($sd,"d/m/Y H:i")}}</td>
               <td>{{date_format($ed,"d/m/Y H:i")}}</td>
               <td>
@@ -79,11 +87,20 @@
         @csrf
         <div class="modal-body">
           <div class="row g-9">
-            <div class="col-12 col-md-7">
+            <div class="col-12 col-md-4">
               <label class="required fw-bold mb-2">Nama kegiatan</label>
               <input type="text" class="form-control" name="name" required>
             </div>
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-4">
+              <label class="required fw-bold mb-2">Kota/kabupaten</label>
+              <select class="form-select" id="city" name="city_id">
+                <option value="" selected disabled>- Pilih kota -</option>
+                @foreach ($cities as $c)
+                  <option value="{{ $c->id }}">{{ $c->name }}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="col-12 col-md-4">
               <label class="required fw-bold mb-2">Lokasi kegiatan</label>
               <input type="text" class="form-control" name="location" required>
             </div>
@@ -146,11 +163,20 @@
           <input type="hidden" id="eid" name="id">
           <div class="modal-body">
             <div class="row g-9">
-              <div class="col-12 col-md-7">
+              <div class="col-12 col-md-4">
                 <label class="required fw-bold mb-2">Nama kegiatan</label>
                 <input type="text" class="form-control" name="name" required>
               </div>
-              <div class="col-12 col-md-5">
+              <div class="col-12 col-md-4">
+                <label class="required fw-bold mb-2">Kota/kabupaten</label>
+                <select class="form-select" id="city" name="city_id">
+                  <option value="" selected disabled>- Pilih kota -</option>
+                  @foreach ($cities as $c)
+                    <option value="{{ $c->id }}">{{ $c->name }}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="col-12 col-md-4">
                 <label class="required fw-bold mb-2">Lokasi kegiatan</label>
                 <input type="text" class="form-control" name="location" required>
               </div>
@@ -185,7 +211,6 @@
                 <label class="required fw-bold mb-2">No telepon</label>
                 <input type="text" class="form-control" name="phone" required>
               </div>
-  
   
             </div>
           </div>
@@ -251,11 +276,9 @@
       dataType: 'json', // added data type
       success: function(response) {
         var mydata = response.data;
-
-        //     $table->string('pic_name');
-        //     $table->string('phone');
         $('#edit input[name="id"]').val(id);
         $('#edit input[name="name"]').val(mydata.name);
+        $('#edit select[name="city_id"]').val(mydata.city_id);
         $('#edit input[name="organizer"]').val(mydata.organizer);
         $('#edit input[name="location"]').val(mydata.location);
         $('#edit textarea[name="description"]').val(mydata.description);
@@ -263,7 +286,7 @@
         $('#edit input[name="end_date"]').val(mydata.end_date);
         $('#edit input[name="pic_name"]').val(mydata.pic_name);
         $('#edit input[name="phone"]').val(mydata.phone);
-        $("#et").text("Edit "+mydata.title);
+        $("#et").text("Edit "+mydata.name);
       }
     });
   }

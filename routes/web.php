@@ -22,6 +22,7 @@ Route::get('/artikel/{post:slug}', [PostController::class, 'post']);
 Route::get('/beranda', [HomeController::class, 'index']);
 Route::get('/daerah-rawan/{risk:id}', [ReportController::class, 'risk']);
 Route::get('/kegiatan', [ActivityController::class, 'index']);
+Route::post('/kegiatan', [ActivityController::class, 'filter']);
 Route::get('/kegiatan/{activity:id}', [ActivityController::class, 'activity']);
 Route::get('/kolaborator', [CollaboratorController::class, 'index']);
 Route::get('/kolaborator/{user:username}', [CollaboratorController::class, 'user']);

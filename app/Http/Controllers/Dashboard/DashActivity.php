@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Activity;
+use App\Models\City;
 use Illuminate\Http\Request;
 use Intervention\Image\Image;
 use Intervention\Image\ImageManager;
@@ -16,6 +17,7 @@ class DashActivity extends Controller
         return view('dashboard.activity',[
             "title" => "Dashboard | Kegiatan",
             "activities" => Activity::whereUserId(auth()->user()->id)->orderBy("id","DESC")->get(),
+            "cities" => City::whereNotNull('latitude')->orderBy('name', 'ASC')->get(),
         ]);
     }
 
@@ -38,6 +40,7 @@ class DashActivity extends Controller
 
     public function store(Request $request){
         $validatedData = $request->validate([
+            'city_id'=>'required',
             'name'=>'required',
             'organizer'=>'required',
             'location'=>'required',
@@ -84,6 +87,7 @@ class DashActivity extends Controller
     public function update(Request $request){
         $validatedData = $request->validate([
             'id'=>'required|numeric',
+            'city_id'=>'required',
             'name'=>'required',
             'organizer'=>'required',
             'location'=>'required',

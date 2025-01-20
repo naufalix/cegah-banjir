@@ -13,8 +13,26 @@
 
   <div class="container px-md-5">
 
-    <div class="row">
-      
+    <form method="post">
+      @csrf
+      <div class="row col-md-6 mx-auto justify-content-center">
+        <div class="col-md-8">
+          <select class="form-select" id="city" name="city_id" style="border-radius: 20px; height: 100%;">
+            <option value="" selected disabled>- Pilih kota -</option>
+            @foreach ($cities as $c)
+              <option value="{{ $c->id }}">{{ $c->name }}</option>
+            @endforeach
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-success">FIlter</button>
+        </div>
+      </div>
+    </form>
+
+    <br>
+
+    <div class="row">  
       @foreach ($activities as $a)
       @php
         $start = date_create($a->start_date);
@@ -28,6 +46,7 @@
               <h5 class="fw-bold" style="font-size: 18px">
                 <a href="/kegiatan/{{$a->id}}">{{$a->name}}</a>
               </h5>
+              <span class="badge bg-success mb-2">{{$a->city->name}}</span>
               <p class="mb-0" style="font-size: 14px"><i class="bi bi-geo-alt-fill me-2"></i>{{$a->location}}</p>
               <p class="mb-0" style="font-size: 14px"><i class="bi bi-calendar-event me-2"></i>{{date_format($start,"d F Y")}}</p>
             </div>

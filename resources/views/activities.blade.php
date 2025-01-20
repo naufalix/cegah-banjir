@@ -46,7 +46,9 @@
               <h5 class="fw-bold" style="font-size: 18px">
                 <a href="/kegiatan/{{$a->id}}">{{$a->name}}</a>
               </h5>
+              @if ($a->city)
               <span class="badge bg-success mb-2">{{$a->city->name}}</span>
+              @endif
               <p class="mb-0" style="font-size: 14px"><i class="bi bi-geo-alt-fill me-2"></i>{{$a->location}}</p>
               <p class="mb-0" style="font-size: 14px"><i class="bi bi-calendar-event me-2"></i>{{date_format($start,"d F Y")}}</p>
             </div>

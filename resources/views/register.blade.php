@@ -31,13 +31,19 @@
         <div class="row">
           <div class="col-md-6 mb-10">
             <label class="form-label fs-6 fw-bolder text-dark">Password</label>
-            <input class="form-control form-control-lg form-control-solid" type="password" name="password" required/>
+            <input class="form-control form-control-lg form-control-solid" type="password" name="password" minlength="8" required placeholder="Minimal 8 karakter"/>
           </div>
           <div class="col-md-6 mb-10">
             <label class="form-label fs-6 fw-bolder text-dark">Tipe akun</label>
-            <input class="form-control form-control-lg form-control-solid" type="text" name="type" required placeholder="Individu/komunitas"/>
+            <select class="form-control form-control-lg form-control-solid form-select" name="type" required>
+              <option value="" disabled selected>Pilih tipe akun</option>
+              <option value="individu">Individu</option>
+              <option value="komunitas">Komunitas</option>
+              <option value="pemerintah">Pemerintah</option>
+            </select>
           </div>
         </div>
+        
         <div class="row mb-10">
           <div class="col-md-6 mb-10">
             <label class="form-label fs-6 fw-bolder text-dark">Lokasi</label>

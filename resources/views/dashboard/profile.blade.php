@@ -51,7 +51,11 @@
                 </div>
                 <div class="mb-5 col-12 col-md-4">
                   <label class="required fw-bold mb-2">Tipe akun</label>
-                  <input type="text" class="form-control" name="type" required value="{{auth()->user()->type}}">
+                  <select class="form-control form-select" name="type" required>
+                    <option value="individu" {{ auth()->user()->type == 'individu' ? 'selected' : '' }}>Individu</option>
+                    <option value="komunitas" {{ auth()->user()->type == 'komunitas' ? 'selected' : '' }}>Komunitas</option>
+                    <option value="pemerintah" {{ auth()->user()->type == 'pemerintah' ? 'selected' : '' }}>Pemerintah</option>
+                  </select>
                 </div>
                 <div class="mb-5 col-12 col-md-4">
                   <label class="required fw-bold mb-2">Lokasi</label>

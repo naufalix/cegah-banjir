@@ -24,17 +24,20 @@
           </thead>
           <tbody>
             @foreach ($users as $u)
+            @php
+              $type = strtolower($u->type);
+            @endphp
             <tr class="text-center taxt-dark">
               <td class="d-none">{{$loop->iteration}}</td>
               <td>{{ $u->name }}</td>
               <td>
                 <span class="badge 
-                  @if($u->type == 'individu') bg-primary 
-                  @elseif($u->type == 'komunitas') bg-warning 
-                  @elseif($u->type == 'pemerintah') bg-danger 
+                  @if($type == 'individu') bg-primary 
+                  @elseif($type == 'komunitas') bg-warning 
+                  @elseif($type == 'pemerintah') bg-danger 
                   @else bg-success 
                   @endif">
-                  {{ $u->type }}
+                  {{ $type }}
                 </span>
               </td>
               <td>{{ $u->location }}</td>

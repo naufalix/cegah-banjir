@@ -40,7 +40,7 @@ class AuthController extends Controller
             'type'=>'required',
             'email'=>'required',
             'username' => 'required',
-            'password' => 'required',
+            'password' => 'required|min:8',
             'location'=>'required',
             'phone'=>'required',
         ]);

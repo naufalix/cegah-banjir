@@ -10,10 +10,22 @@
     <!--begin::Main-->
     <script>
       @if(session()->has('success'))
-        Swal.fire({title:'Berhasil', text:'{{session('success')}}', icon:'success'})
+        Swal.fire({title:'Success', html:'{!!session('success')!!}', icon:'success'})
       @endif
       @if(session()->has('error'))
-        Swal.fire({title:'Error!', text:'{{session('error')}}', icon:'error'})
+        Swal.fire({title:'Error!', html:'{!!session('error')!!}', icon:'error'})
+      @endif
+      @if(session()->has('info'))
+        Swal.fire({title:'Info', html:'{!!session('info')!!}', icon:'info'})
+      @endif
+      @if(isset($success))
+        Swal.fire({title:'Success', text:'{{$success}}', icon:'success'})
+      @endif
+      @if(isset($error))
+        Swal.fire({title:'Error!', text:'{{$error}}', icon:'error'})
+      @endif
+      @if($errors->any())
+        Swal.fire({title:'Error!', html:'{!! implode('', $errors->all(':message<br>')) !!}', icon:'error'})
       @endif
     </script>
     <div class="d-flex flex-column flex-root">

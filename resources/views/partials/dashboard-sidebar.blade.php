@@ -45,6 +45,14 @@
                         <span class="menu-title">Daerah rawan banjir</span>
                       </a>
                     </div>
+                    <div class="menu-item">
+                      <a class="menu-link py-2" href="/dashboard/lapor-dampak">
+                        <span class="menu-bullet">
+                          <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Dampak banjir</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -60,7 +68,12 @@
                 </div>
                 <div class="menu-item">
                   <a class="menu-link py-2" href="/dashboard/tindak-lanjut">
-                    <span class="menu-title menu-icon"><i class="fa fa-check-circle-o fs-3"></i> Tindak lanjut</span>
+                    <span class="menu-title menu-icon btn btn-success text-light"><i class="fa fa-check-circle-o fs-3"></i> Tindak lanjut</span>
+                  </a>
+                </div>
+                <div class="menu-item">
+                  <a class="menu-link py-2" href="/dashboard/bantuan">
+                    <span class="menu-title menu-icon btn btn-primary text-light"><i class="mdi mdi-charity fs-3"></i> Beri bantuan</span>
                   </a>
                 </div>
 

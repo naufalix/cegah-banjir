@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ApiFormatter;
-use App\Models\City;
 use App\Models\Activity;
+use App\Models\Assistance;
+use App\Models\City;
 use App\Models\Flood;
 use App\Models\FollowUp;
+use App\Models\Impact;
 use App\Models\Post;
 use App\Models\Risk;
 use Exception;
@@ -21,6 +23,9 @@ class APIController extends Controller
   public function activity(Activity $activity){  
     return ApiFormatter::createApi(200,"Success",$activity);
   }
+  public function assistance(Assistance $data){  
+    return ApiFormatter::createApi(200,"Success",$data);
+  }
   public function flood($id){
     $flood = Flood::whereId($id)->with('city')->first();  
     return ApiFormatter::createApi(200,"Success",$flood);
@@ -30,6 +35,9 @@ class APIController extends Controller
     return ApiFormatter::createApi(200, "Success", $floods);
   }
   public function followUp(FollowUp $data){
+    return ApiFormatter::createApi(200,"Success",$data);
+  }
+  public function impact(Impact $data){
     return ApiFormatter::createApi(200,"Success",$data);
   }
   public function post(Post $post){  

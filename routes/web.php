@@ -8,9 +8,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Dashboard\DashActivity;
+use App\Http\Controllers\Dashboard\DashAssistance;
 use App\Http\Controllers\Dashboard\DashHome;
 use App\Http\Controllers\Dashboard\DashFlood;
 use App\Http\Controllers\Dashboard\DashFollowUp;
+use App\Http\Controllers\Dashboard\DashImpact;
 use App\Http\Controllers\Dashboard\DashPost;
 use App\Http\Controllers\Dashboard\DashRisk;
 use App\Http\Controllers\Dashboard\DashUser;
@@ -42,16 +44,20 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::group(['prefix'=> 'dashboard','middleware'=>['auth']], function(){
   Route::get('/', [DashHome::class, 'index']);
   Route::get('/artikel', [DashPost::class, 'index']);
+  Route::get('/bantuan', [DashAssistance::class, 'index']);
   Route::get('/dashboard', [DashHome::class, 'index']);
   Route::get('/kegiatan', [DashActivity::class, 'index']);
   Route::get('/lapor-banjir', [DashFlood::class, 'index']);
+  Route::get('/lapor-dampak', [DashImpact::class, 'index']);
   Route::get('/lapor-rawan', [DashRisk::class, 'index']);
   Route::get('/profil', [DashUser::class, 'index']);
   Route::get('/tindak-lanjut', [DashFollowUp::class, 'index']);
   
   Route::post('/artikel', [DashPost::class, 'postHandler']);
+  Route::post('/bantuan', [DashAssistance::class, 'postHandler']);
   Route::post('/kegiatan', [DashActivity::class, 'postHandler']);
   Route::post('/lapor-banjir', [DashFlood::class, 'postHandler']);
+  Route::post('/lapor-dampak', [DashImpact::class, 'postHandler']);
   Route::post('/lapor-rawan', [DashRisk::class, 'postHandler']);
   Route::post('/profil', [DashUser::class, 'postHandler']);
   Route::post('/tindak-lanjut', [DashFollowUp::class, 'postHandler']);
@@ -59,11 +65,14 @@ Route::group(['prefix'=> 'dashboard','middleware'=>['auth']], function(){
 
 // API
 Route::group(['prefix'=> 'api'], function(){
-  Route::get('city/{city:id}', [APIController::class, 'city']);
   Route::get('activity/{activity:id}', [APIController::class, 'activity']);
+  // Route::get('assistance/{assistance:id}', [APIController::class, 'assistance']);
+  Route::get('assistance/{data:id}', [APIController::class, 'assistance']);
+  Route::get('city/{city:id}', [APIController::class, 'city']);
   Route::get('flood/{id}', [APIController::class, 'flood']);
   Route::get('floods', [APIController::class, 'floods']);
   Route::get('follow-up/{data:id}', [APIController::class, 'followUp']);
+  Route::get('impact/{data:id}', [APIController::class, 'impact']);
   Route::get('post/{post:id}', [APIController::class, 'post']);
   Route::get('risk/{id}', [APIController::class, 'risk']);
   Route::get('risks', [APIController::class, 'risks']);

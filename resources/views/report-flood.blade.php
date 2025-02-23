@@ -19,6 +19,8 @@
           </div>
         </div>
         <p>{{$flood->description}}</p>
+        <p>{{$flood->latitude}}</p>
+        <p>{{$flood->longitude}}</p>
         @include('sections.form-report') 
       </div>
 
@@ -51,8 +53,8 @@
 @section('script')
 <script>
   var map = L.map('map', {
-    center: [{{$f->latitude}}, {{$f->longitude}}],
-    zoom: 5
+    center: [{{$flood->latitude}}, {{$flood->longitude}}],
+    zoom: {{$flood->city->zoom}}
   });
 
   L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
@@ -60,14 +62,14 @@
   }).addTo(map);
   
   var customIcon = L.icon({
-    iconUrl: '/assets/img/marker/'+{{$f->cause->id}}+'.png',
+    iconUrl: '/assets/img/marker/'+{{$flood->cause->id}}+'.png',
     iconSize: [20, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
   });
 
   // Create a marker with the custom icon
-  var marker = L.marker([{{$f->latitude}}, {{$f->longitude}}], { icon: customIcon }).addTo(map);
+  var marker = L.marker([{{$flood->latitude}}, {{$flood->longitude}}], { icon: customIcon }).addTo(map);
 
 </script>
 @endsection

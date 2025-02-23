@@ -8,7 +8,7 @@ use App\Models\User;
 class CollaboratorController extends Controller
 {
     private function meta(){
-        $meta = Meta::$data_meta;
+        $meta = Meta::getDataMeta();
         return $meta;
     }
 

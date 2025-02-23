@@ -14,7 +14,7 @@ use App\Models\User;
 class HomeController extends Controller
 {
     private function meta(){
-        $meta = Meta::$data_meta;
+        $meta = Meta::getDataMeta();
         return $meta;
     }
 

@@ -6,7 +6,7 @@
         
         <a href="/beranda" class="d-flex align-items-center">
           <img src="/assets/img/logo.png" alt="" width="40">
-          <span class="sitename">Cegah Banjir</span>
+          <span class="sitename">{{ $meta['app_name'] }}</span>
         </a>
         <div class="footer-contact pt-3">
           <p>Kolaborasi antara pemerintah dan masyarakat penting untuk mengurangi risiko banjir. Platform ini menyediakan alat dan informasi untuk bersama-sama mengatasi penyebab banjir. Mari menciptakan lingkungan yang lebih aman dan bersih!</p>
@@ -39,7 +39,7 @@
   </div>
 
   <div class="container copyright text-center mt-4">
-    <p>© <span>Copyright</span> <strong class="px-1 sitename">Cegah Banjir</strong> <a href="https://docs.google.com/spreadsheets/d/1O3AKHt8eztY0lDeKrdfC4s-HcqmP52CcmJvxlKRHpjs/edit?usp=drive_link" target="_blank">Credit</a></p>
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">{{ $meta['app_name'] }}</strong> <a href="https://docs.google.com/spreadsheets/d/1O3AKHt8eztY0lDeKrdfC4s-HcqmP52CcmJvxlKRHpjs/edit?usp=drive_link" target="_blank">Credit</a></p>
     <div class="credits d-none">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you've purchased the pro version. -->

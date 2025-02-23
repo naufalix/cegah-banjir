@@ -3,7 +3,7 @@
 
   <div class="container section-title" data-aos="fade-up">
     <h2>Ulasan</h2>
-    <p>Berikan dan lihat pendapat pengguna tentang Cegah Banjir</p>
+    <p>Berikan dan lihat pendapat pengguna tentang {{ $meta['app_name'] }}</p>
   </div>
 
   <div class="container px-md-4">

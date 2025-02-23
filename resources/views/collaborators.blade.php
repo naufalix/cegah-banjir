@@ -4,7 +4,7 @@
 <section id="home-post" class="section bg-light">
 
   <div class="container section-title p-0" data-aos="fade-up">
-    <h2>Kolaborator CegahBanjir</h2>
+    <h2>Kolaborator {{ $meta['app_name'] }}</h2>
   </div>
 
   <div class="container px-md-5">

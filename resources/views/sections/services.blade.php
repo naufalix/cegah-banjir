@@ -3,7 +3,7 @@
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>Statistik CegahBanjir</h2>
+    <h2>Statistik {{ $meta['app_name'] }}</h2>
     <p>Lihat data terkini dan ambil langkah nyata untuk mencegah banjir</p>
   </div><!-- End Section Title -->
 

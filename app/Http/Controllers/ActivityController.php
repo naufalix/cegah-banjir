@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class ActivityController extends Controller
 {
     private function meta(){
-        $meta = Meta::$data_meta;
+        $meta = Meta::getDataMeta();
         return $meta;
     }
 

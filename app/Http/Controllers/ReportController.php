@@ -9,13 +9,13 @@ use App\Models\Risk;
 class ReportController extends Controller
 {
     private function meta(){
-        $meta = Meta::$data_meta;
+        $meta = Meta::getDataMeta();
         return $meta;
     }
 
     public function index(){
         $meta = $this->meta();
-        $meta['title'] = "Cegah Banjir | Laporan penyebab banjir";
+        $meta['title'] = Meta::getAppName()." | Laporan penyebab banjir";
         return view('report',[
             "meta" => $meta,
             "floods" => Flood::orderBy('id', 'DESC')->get(),

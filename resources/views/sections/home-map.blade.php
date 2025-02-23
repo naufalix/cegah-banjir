@@ -7,13 +7,10 @@
   </div>
 
   <div class="container">
-
     <div class="row gy-3">
-
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
         <div id="map" class="rounded" style="width: 100%; height: 400px;"></div>
       </div>
-
       <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
         <div class="about-content ps-0 ps-lg-3">
           <h3>Peta penyebab banjir</h3>
@@ -22,18 +19,16 @@
           </p>
           <a href="/peta-banjir" class="btn btn-success">Identifikasi</a>
         </div>
-
       </div>
     </div>
-
   </div>
 
-  <br><br>
-
   <div class="container">
-
+    <br><hr><br>
+  </div>
+  
+  <div class="container">
     <div class="row gy-3">
-
       <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
         <div class="about-content ps-0 ps-lg-3">
           <h3>Peta daerah rawan banjir</h3>
@@ -43,13 +38,31 @@
           <a href="/peta-daerah-rawan" class="btn btn-success">Identifikasi</a>
         </div>
       </div>
-
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
         <div id="map2" class="rounded" style="width: 100%; height: 400px;"></div>
       </div>
-
     </div>
+  </div>
 
+  <div class="container">
+    <br><hr><br>
+  </div>
+
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div id="map3" class="rounded" style="width: 100%; height: 400px;"></div>
+      </div>
+      <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-content ps-0 ps-lg-3">
+          <h3>Peta dampak banjir</h3>
+          <p>
+            Fitur ini menyediakan informasi visual tentang daerah terdampak banjir yang didapat dari laporan UMKM dan masyarakat.
+          </p>
+          <a href="/peta-dampak-banjir" class="btn btn-success">Lihat selengkapnya</a>
+        </div>
+      </div>
+    </div>
   </div>
   
 </section><!-- /About Section -->

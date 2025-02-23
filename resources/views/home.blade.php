@@ -47,11 +47,15 @@
 
         // Create a popup for the marker
         var popupContent = `
-          <b>${flood.title}</b><br>
-          ${flood.description}<br>
-          Deskripsi: ${flood.description}<br>
-          Penyebab: ${flood.cause.name}<br>
-          <button class='btn btn-sm btn-primary' onclick='pergi(${flood.id})'>Pergi</button>
+          <div class="my-3">
+            <img class="mb-2 rounded" src="/assets/img/flood/${flood.image}" style="width:100%; aspect-ratio: 16/9; object-fit: cover">
+            <b>${flood.title}</b><br>
+            Deskripsi: ${flood.description}<br>
+            Penyebab: <span class="badge" style="background-color: ${flood.cause.color}">${flood.cause.name}</span><br>
+            Pelapor: <a href="/kolaborator/${flood.user.username}">${flood.user.name}</a><br>
+            <br>
+            <a class='btn btn-success text-white py-1 px-3' href="/laporan/${flood.id}"' style="font-size:10px">Detail laporan</a>
+          </div>
         `;
 
         // Bind the popup to the marker
@@ -93,11 +97,16 @@
         
         // Create a popup for the marker
         var popupContent = `
-          <b>${risk.title}</b><br>
-          ${risk.description}<br>
-          Deskripsi: ${risk.description}<br>
-          Tanggal: ${risk.date}<br>
-          <button class='btn btn-sm btn-primary' onclick='pergi(${risk.id})'>Pergi</button>
+          <div class="my-3">
+            <img class="mb-2 rounded" src="/assets/img/risk/${risk.image}" style="width:100%; aspect-ratio: 16/9; object-fit: cover">
+            <b>${risk.title}</b><br>
+            Deskripsi: ${risk.description}<br>
+            Luas area banjir: ${risk.area}m²<br>
+            Tanggal banjir: ${risk.date}<br>
+            Pelapor: <a href="/kolaborator/${risk.user.username}">${risk.user.name}</a><br>
+            <br>
+            <a class='btn btn-success text-white py-1 px-3' href="/daerah-rawan/${risk.id}"' style="font-size:10px">Detail laporan</a>
+          </div>
         `;
 
         // Bind the popup to the marker
@@ -106,7 +115,52 @@
     }
   });
 
+  ////////
 
+  // Initialize leaflet
+  var map3 = L.map('map3', {
+    center: [-7.97, 112.62],
+    zoom: 12
+  });
+
+  L.tileLayer('https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map3);
+
+
+  // Set leaflet marker
+  $.ajax({
+    url: "/api/impacts",
+    type: 'GET',
+    dataType: 'json',
+    success: function(response) {
+      var mydata = response.data;
+
+      // Loop through the data and add markers with the respective icon
+      mydata.forEach(function(impact) {
+ 
+        // Create a marker with the custom icon
+        var marker = L.marker([impact.latitude, impact.longitude]).addTo(map3);
+
+        // Create a popup for the marker
+        var popupContent = `
+          <div class="my-3">
+            <img class="mb-2 rounded" src="/assets/img/impact/${impact.image}" style="width:100%; aspect-ratio: 16/9; object-fit: cover">
+            <b>${impact.name}</b><br>
+            Deskripsi: ${impact.description}<br>
+            Pelapor: <a href="/kolaborator/${impact.user.username}">${impact.user.name}</a><br>
+            Harapan bantuan: ${impact.assistance_needed}<br>
+            <br>
+            <a class='btn btn-success d-none text-white py-1 px-3' href="/laporan/${impact.id}"' style="font-size:10px">Detail laporan</a>
+            
+          </div>
+        `;
+
+        // Bind the popup to the marker
+        marker.bindPopup(popupContent);
+      });
+    }
+  });
 
   ////////
 

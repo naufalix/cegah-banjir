@@ -19,8 +19,6 @@
           </div>
         </div>
         <p>{{$flood->description}}</p>
-        <p>{{$flood->latitude}}</p>
-        <p>{{$flood->longitude}}</p>
         @include('sections.form-report') 
       </div>
 

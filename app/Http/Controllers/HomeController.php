@@ -51,4 +51,13 @@ class HomeController extends Controller
         ]);
     }
 
+    public function map3(){
+        $meta = $this->meta();
+        $meta['title'] = "Peta dampak banjir";
+        return view('map3',[
+            "meta" => $meta,
+            "cities" => City::whereNotNull('latitude')->orderBy('name', 'ASC')->get(),
+        ]);
+    }
+
 }

@@ -14,6 +14,7 @@
           <ul>
             <li><a href="/peta-banjir">Penyebab banjir</a></li>
             <li><a href="/peta-daerah-rawan">Daerah rawan banjir</a></li>
+            <li><a href="/peta-dampak-banjir">Dampak banjir</a></li>
           </ul>
         </li>
         <li><a href="/kolaborator">Kolaborator</a></li>

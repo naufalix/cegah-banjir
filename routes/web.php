@@ -32,6 +32,7 @@ Route::get('/laporan/{flood:id}', [ReportController::class, 'flood']);
 Route::get('/laporan-banjir', [ReportController::class, 'index']);
 Route::get('/peta-banjir', [HomeController::class, 'map']);
 Route::get('/peta-daerah-rawan', [HomeController::class, 'map2']);
+Route::get('/peta-dampak-banjir', [HomeController::class, 'map3']);
 
 // AUTH
 Route::get('/login', [AuthController::class, 'index'])->name('login');
@@ -73,6 +74,7 @@ Route::group(['prefix'=> 'api'], function(){
   Route::get('floods', [APIController::class, 'floods']);
   Route::get('follow-up/{data:id}', [APIController::class, 'followUp']);
   Route::get('impact/{data:id}', [APIController::class, 'impact']);
+  Route::get('impacts', [APIController::class, 'impacts']);
   Route::get('post/{post:id}', [APIController::class, 'post']);
   Route::get('risk/{id}', [APIController::class, 'risk']);
   Route::get('risks', [APIController::class, 'risks']);

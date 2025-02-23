@@ -40,6 +40,10 @@ class APIController extends Controller
   public function impact(Impact $data){
     return ApiFormatter::createApi(200,"Success",$data);
   }
+  public function impacts(){
+    $impacts = Impact::with('user')->get();
+    return ApiFormatter::createApi(200, "Success",$impacts);
+  }
   public function post(Post $post){  
     return ApiFormatter::createApi(200,"Success",$post);
   }

@@ -14,10 +14,17 @@
       </div>
 
       <div class="col-lg-2 col-md-3 footer-links ms-auto">
-        <h4>Fitur</h4>
+        <h4>Peta banjir</h4>
         <ul>
           <li><i class="bi bi-chevron-right"></i> <a href="/peta-banjir">Peta penyebab banjir</a></li>
           <li><i class="bi bi-chevron-right"></i> <a href="/peta-daerah-rawan">Peta daerah rawan banjir</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a href="/peta-dampak-banjir">Peta dampak banjir</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links">
+        <h4>Fitur</h4>
+        <ul>
           <li><i class="bi bi-chevron-right"></i> <a href="/kolaborator">Kolaborator</a></li>
           <li><i class="bi bi-chevron-right"></i> <a href="/laporan">Laporan</a></li>
           <li><i class="bi bi-chevron-right"></i> <a href="/artikel">Artikel edukasi</a></li>
@@ -25,7 +32,7 @@
         </ul>
       </div>
 
-      <div class="col-lg-4 col-md-12">
+      <div class="col-lg-2 col-md-12">
         <h4>Ikuti kami</h4>
         <div class="social-links d-flex">
           <a href=""><i class="bi bi-twitter-x"></i></a>

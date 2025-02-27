@@ -9,6 +9,13 @@
 
   <div class="container px-md-5">
     <div class="card p-4">
+      
+      <div class="ms-auto">
+        <a href="/dashboard/lapor-banjir">
+          <button class="btn btn-success py-2 px-3" style="font-size: 12px;"><i class="bi bi-plus-lg"></i> Buat laporan</button>
+        </a>
+      </div>
+
       <div class="table-responsive">
         <table id="myTable" class="table table-striped table-hover table-rounded border gs-7">
           <thead>
@@ -57,6 +64,13 @@
 
   <div class="container px-md-5">
     <div class="card p-4">
+      
+      <div class="ms-auto">
+        <a href="/dashboard/lapor-rawan">
+          <button class="btn btn-success py-2 px-3" style="font-size: 12px;"><i class="bi bi-plus-lg"></i> Buat laporan</button>
+        </a>
+      </div>
+
       <div class="table-responsive">
         <table id="myTable2" class="table table-striped table-hover table-rounded border gs-7">
           <thead>

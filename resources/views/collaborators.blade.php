@@ -9,6 +9,11 @@
 
   <div class="container px-md-5">
 
+    <div class="row col-md-6 mx-auto justify-content-center">
+      <a class="btn btn-success" href="/dashboard/lapor-banjir" style="width: fit-content;">Mulai kolaborasi</a>
+    </div>
+    <br>
+  
     <div class="card p-4">
       <div class="table-responsive">
         <table id="myTable" class="table table-striped table-hover table-rounded border gs-7">

@@ -57,7 +57,7 @@
         <div class="about-content ps-0 ps-lg-3">
           <h3>Peta dampak banjir</h3>
           <p>
-            Fitur ini menyediakan informasi visual tentang daerah terdampak banjir yang didapat dari laporan UMKM dan masyarakat.
+            Peta Dampak Banjir adalah fitur interaktif yang menampilkan lokasi-lokasi terdampak banjir berdasarkan laporan masyarakat. Melalui fitur ini, pemilik UMKM dan warga dapat melaporkan kerugian akibat banjir, termasuk kondisi usaha, kebutuhan bantuan, dan foto kondisi pasca banjir. Informasi yang dikumpulkan akan divisualisasikan dalam peta digital, memudahkan pemerintah, komunitas, dan individu untuk melihat area terdampak serta menyalurkan bantuan secara lebih tepat sasaran. Dengan transparansi data dan kemudahan akses, fitur ini mendukung kolaborasi dalam upaya pemulihan dan mitigasi banjir.
           </p>
           <a href="/peta-dampak-banjir" class="btn btn-success">Lihat selengkapnya</a>
         </div>

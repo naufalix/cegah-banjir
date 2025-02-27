@@ -6,6 +6,7 @@ use App\Models\Activity;
 use App\Models\Cause;
 use App\Models\City;
 use App\Models\Flood;
+use App\Models\Impact;
 use App\Models\Meta;
 use App\Models\Post;
 use App\Models\Risk;
@@ -26,6 +27,7 @@ class HomeController extends Controller
             "count_activity" => Activity::all()->count(),
             "count_cause" => Cause::all()->count(),
             "count_flood" => Flood::all()->count(),
+            "count_impact" => Impact::all()->count(),
             "count_post" => Post::all()->count(),
             "count_risk" => Risk::all()->count(),
             "count_user" => User::all()->count(),

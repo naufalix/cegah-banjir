@@ -15,6 +15,7 @@
         $statistics = [
           (object) ['name'=>'Penyebab banjir',      'icon'=>'bi bi-geo-alt',                  'url'=>'/peta-banjir',        'count' => $count_cause-1,],
           (object) ['name'=>'Daerah rawan banjir',  'icon'=>'bi bi-map-fill',                 'url'=>'/peta-daerah-rawan',  'count' => $count_risk,],
+          (object) ['name'=>'Dampak banjir',        'icon'=>'bi bi-cloud-rain-heavy',         'url'=>'/peta-dampak-banjir', 'count' => $count_impact,],
           (object) ['name'=>'Kolaborator',          'icon'=>'bi bi-person-fill',              'url'=>'/kolaborator',        'count' => $count_user,],
           (object) ['name'=>'Laporan',              'icon'=>'bi bi-file-earmark-text-fill',   'url'=>'/laporan-banjir',     'count' => $count_risk+$count_flood,],
           (object) ['name'=>'Artikel edukasi',      'icon'=>'bi bi-book-half',                'url'=>'/artikel',            'count' => $count_post,],

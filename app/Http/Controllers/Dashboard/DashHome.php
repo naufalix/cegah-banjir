@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Activity;
 use App\Models\Flood;
 use App\Models\FollowUp;
+use App\Models\Impact;
 use App\Models\Post;
 use App\Models\Risk;
 use Illuminate\Http\Request;
@@ -20,6 +21,7 @@ class DashHome extends Controller
             "title" => "Dashboard | Home",
             "count_activity" => Activity::whereUserId($id)->get()->count(),
             "count_flood" => Flood::whereUserId($id)->get()->count(),
+            "count_impact" => Impact::whereUserId($id)->get()->count(),
             "count_post" => Post::whereUserId($id)->get()->count(),
             "count_risk" => Risk::whereUserId($id)->get()->count(),
             "count_followup" => FollowUp::whereUserId($id)->get()->count(),

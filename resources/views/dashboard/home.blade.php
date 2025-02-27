@@ -19,11 +19,12 @@
           <div class="row justify-content-center">
             @php
               $statistics = [
-                (object) ['name'=>'Laporan Penyebab banjir',  'icon'=>'bi bi-droplet-half',   'url'=>'/dashboard/lapor-banjir',   'count' => $count_flood,],
-                (object) ['name'=>'Laporan Daerah rawan',     'icon'=>'bi bi-droplet-half',   'url'=>'/dashboard/lapor-rawan',    'count' => $count_risk,],
-                (object) ['name'=>'Artikel edukasi',          'icon'=>'mdi mdi-lead-pencil',  'url'=>'/dashboard/artikel',        'count' => $count_post,],
-                (object) ['name'=>'Kegiatan',                 'icon'=>'fa fa-calendar',       'url'=>'/dashboard/kegiatan',       'count' => $count_activity,],
-                (object) ['name'=>'Tindak lanjut',            'icon'=>'fa fa-check-circle-o', 'url'=>'/dashboard/tindak-lanjut',  'count' => $count_followup,],
+                (object) ['name'=>'Laporan Penyebab banjir',  'icon'=>'bi bi-droplet-half',     'url'=>'/dashboard/lapor-banjir',   'count' => $count_flood,],
+                (object) ['name'=>'Laporan Daerah rawan',     'icon'=>'bi bi-map-fill',         'url'=>'/dashboard/lapor-rawan',    'count' => $count_risk,],
+                (object) ['name'=>'Laporan Dampak banjir',    'icon'=>'bi bi-cloud-rain-heavy', 'url'=>'/dashboard/lapor-dampak',   'count' => $count_impact,],
+                (object) ['name'=>'Artikel edukasi',          'icon'=>'mdi mdi-lead-pencil',    'url'=>'/dashboard/artikel',        'count' => $count_post,],
+                (object) ['name'=>'Kegiatan',                 'icon'=>'fa fa-calendar',         'url'=>'/dashboard/kegiatan',       'count' => $count_activity,],
+                (object) ['name'=>'Tindak lanjut',            'icon'=>'fa fa-check-circle-o',   'url'=>'/dashboard/tindak-lanjut',  'count' => $count_followup,],
               ];
             @endphp
 

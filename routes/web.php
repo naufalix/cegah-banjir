@@ -23,6 +23,7 @@ Route::get('/artikel', [PostController::class, 'blog']);
 Route::post('/artikel', [PostController::class, 'filter']);
 Route::get('/artikel/{post:slug}', [PostController::class, 'post']);
 Route::get('/beranda', [HomeController::class, 'index']);
+Route::get('/dampak-banjir/{impact:id}', [ReportController::class, 'impact']);
 Route::get('/daerah-rawan/{risk:id}', [ReportController::class, 'risk']);
 Route::get('/kegiatan', [ActivityController::class, 'index']);
 Route::post('/kegiatan', [ActivityController::class, 'filter']);

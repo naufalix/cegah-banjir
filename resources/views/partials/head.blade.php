@@ -97,7 +97,7 @@
       font-size: 14px;
     }
 
-    .markdown p, .markdown li {font-size: 20px !important;}
+    .markdown p, .markdown li {font-size: 16px !important;}
     .markdown h2:nth-of-type(1) {margin-top: 0px !important;}
     .markdown h2 {font-size: 28px; margin-top: 50px; margin-bottom: 25px;}
     .markdown h3 {margin-top: 30px; margin-bottom: 15px;}

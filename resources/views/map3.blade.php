@@ -83,7 +83,7 @@
             Pelapor: <a href="/kolaborator/${impact.user.username}">${impact.user.name}</a><br>
             Harapan bantuan: ${impact.assistance_needed}<br>
             <br>
-            <a class='btn btn-success d-none text-white py-1 px-3' href="/laporan/${impact.id}"' style="font-size:10px">Detail laporan</a>
+            <a class='btn btn-success text-white py-1 px-3' href="/dampak-banjir/${impact.id}"' style="font-size:10px">Detail laporan</a>
             
           </div>
         `;

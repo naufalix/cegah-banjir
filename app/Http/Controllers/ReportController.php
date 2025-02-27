@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Meta;
 use App\Models\Flood;
+use App\Models\Impact;
 use App\Models\Risk;
 
 class ReportController extends Controller
@@ -40,6 +41,16 @@ class ReportController extends Controller
             "meta" => $meta,
             "risk" => $risk,
             "risks" => Risk::orderBy('id', 'DESC')->limit(4)->get(),
+        ]);
+    }
+
+    public function impact(Impact $impact){  
+        $meta = $this->meta();
+        $meta['title'] = $impact->name;
+        return view('report-impact',[
+            "meta" => $meta,
+            "impact" => $impact,
+            "impacts" => Impact::orderBy('id', 'DESC')->limit(4)->get(),
         ]);
     }
 

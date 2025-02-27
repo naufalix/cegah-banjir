@@ -20,7 +20,7 @@
         </div>
         <p>{{$impact->description}}</p>
         
-        @if ($impact->assistance)
+        @if ($impact->assistance->count()>0)
         <p class="h5 fw-bold text-success">Riwayat bantuan :</p>
         <table class="mt-3 table table-bordered">
             <tr>
@@ -53,7 +53,11 @@
           <h3 class="fw-bold mb-0" style="font-size: 20px;">Detail laporan</h3>
           <hr>
           <p class="mb-0" style="font-size: 14px"><strong>Pelapor</strong> : {{$impact->user->name}}</p>
+          <p class="mb-0" style="font-size: 14px"><strong>Kontak</strong> : {{$impact->contact}}</p>
           <p class="mb-0" style="font-size: 14px"><strong>Melaporkan sebagai</strong> : {{$impact->type}}</p>
+          @if ($impact->business_type)
+            <p class="mb-0" style="font-size: 14px"><strong>Jenis usaha</strong> : {{$impact->business_type}}</p>
+          @endif
           <p class="mb-0" style="font-size: 14px"><strong>Alamat</strong> : {{$impact->address}}</p>
           <br>
           <a href="/kolaborator/{{$impact->user->username}}" class="btn btn-success">Profil kolaborator</a>

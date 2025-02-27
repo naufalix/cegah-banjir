@@ -74,20 +74,28 @@
         @csrf
         <div class="modal-body">
           <div class="row g-9">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-4">
               <label class="required fw-bold mb-2">Nama anda/nama usaha</label>
               <input type="text" class="form-control" name="name" required>
             </div>
             <div class="col-6 col-md-4">
-              <label class="required fw-bold mb-2">Tipe</label>
+              <label class="required fw-bold mb-2">Lapor sebagai</label>
               <select class="form-select" name="type">
-                <option value="individu">Individu</option>
+                <option value="individu">Masyarakat</option>
                 <option value="umkm">UMKM</option>
               </select>
             </div>
-            <div class="col-12 col-md-8">
+            <div class="col-6 col-md-4">
+              <label class="fw-bold mb-2">Jenis usaha (opsional)</label>
+              <input type="text" class="form-control" name="business_type">
+            </div>
+            <div class="col-12 col-md-4">
               <label class="required fw-bold mb-2">Alamat</label>
               <input type="text" class="form-control" name="address" required>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="required fw-bold mb-2">Kontak</label>
+              <input type="text" class="form-control" name="contact" required>
             </div>
             <div class="col-12 col-md-4">
               <label class="required fw-bold mb-2">Kota/kabupaten</label>
@@ -142,20 +150,28 @@
           <input type="hidden" id="eid" name="id">
           <div class="modal-body">
             <div class="row g-9">
-              <div class="col-12 col-md-8">
+              <div class="col-12 col-md-4">
                 <label class="required fw-bold mb-2">Nama anda/nama usaha</label>
                 <input type="text" class="form-control" name="name" required>
               </div>
               <div class="col-6 col-md-4">
-                <label class="required fw-bold mb-2">Tipe</label>
+                <label class="required fw-bold mb-2">Lapor sebagai</label>
                 <select class="form-select" name="type">
-                  <option value="individu">Individu</option>
+                  <option value="individu">Masyarakat</option>
                   <option value="umkm">UMKM</option>
                 </select>
               </div>
-              <div class="col-12 col-md-8">
+              <div class="col-6 col-md-4">
+                <label class="fw-bold mb-2">Jenis usaha (opsional)</label>
+                <input type="text" class="form-control" name="business_type">
+              </div>
+              <div class="col-12 col-md-4">
                 <label class="required fw-bold mb-2">Alamat</label>
                 <input type="text" class="form-control" name="address" required>
+              </div>
+              <div class="col-12 col-md-4">
+                <label class="required fw-bold mb-2">Kontak</label>
+                <input type="text" class="form-control" name="contact" required>
               </div>
               <div class="col-12 col-md-4">
                 <label class="required fw-bold mb-2">Kota/kabupaten</label>
@@ -197,42 +213,42 @@
 
 <div class="modal fade" tabindex="-1" id="hapus">
   <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title">Hapus Laporan</h3>
-          <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-            <i class="bi bi-x-lg"></i>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Hapus Laporan</h3>
+        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
         </div>
-        <form class="form" method="post" action="">
-          @csrf
-          <div class="modal-body text-center">
-            <input type="hidden" class="d-none" id="hi" name="id">
-            <p class="fw-bold mb-2 fs-3">"<span id="hd"></span>"</p>
-            <p class="mb-2 fs-4">Apakah anda yakin ingin menghapus laporan ini?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Batal</button>
-            <button type="submit" class="btn btn-danger" name="submit" value="destroy">Hapus</button>
-          </div>
-        </form>
       </div>
+      <form class="form" method="post" action="">
+        @csrf
+        <div class="modal-body text-center">
+          <input type="hidden" class="d-none" id="hi" name="id">
+          <p class="fw-bold mb-2 fs-3">"<span id="hd"></span>"</p>
+          <p class="mb-2 fs-4">Apakah anda yakin ingin menghapus laporan ini?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-danger" name="submit" value="destroy">Hapus</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 
 <div class="modal fade" tabindex="-1" id="foto">
   <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="ft">View image</h3>
-          <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-            <i class="bi bi-x-lg"></i>
-          </div>
-        </div>
-        <div class="modal-body d-flex">
-          <img class="mx-auto" id="img-view" src="" style="height:100%; width: 100%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="ft">View image</h3>
+        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
         </div>
       </div>
+      <div class="modal-body d-flex">
+        <img class="mx-auto" id="img-view" src="" style="height:100%; width: 100%">
+      </div>
+    </div>
   </div>
 </div>
 
@@ -255,8 +271,10 @@
         $('#edit input[name="name"]').val(mydata.name);
         $('#edit select[name="type"]').val(mydata.type);
         $('#edit input[name="address"]').val(mydata.address);
+        $('#edit input[name="contact"]').val(mydata.contact);
         $('#edit select[name="city_id"]').val(mydata.city_id);
         $('#edit textarea[name="description"]').val(mydata.description);
+        $('#edit input[name="business_type"]').val(mydata.business_type);
         $('#edit input[name="latitude"]').val(mydata.latitude);
         $('#edit input[name="longitude"]').val(mydata.longitude);
         $('#edit input[name="assistance_needed"]').val(mydata.assistance_needed);

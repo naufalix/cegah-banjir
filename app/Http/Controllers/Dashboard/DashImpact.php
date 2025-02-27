@@ -44,6 +44,7 @@ class DashImpact extends Controller
             'name'=>'required',
             'type'=>'required',
             'address'=>'required',
+            'contact'=>'required',
             'latitude'=>'required',
             'longitude'=>'required',
             'description'=>'required',
@@ -52,6 +53,7 @@ class DashImpact extends Controller
         ]);
 
         $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['business_type'] = $request->business_type;
 
         //Read image
         $manager = new ImageManager(new Driver());
@@ -91,6 +93,7 @@ class DashImpact extends Controller
             'name'=>'required',
             'type'=>'required',
             'address'=>'required',
+            'contact'=>'required',
             'latitude'=>'required',
             'longitude'=>'required',
             'description'=>'required',
@@ -98,6 +101,7 @@ class DashImpact extends Controller
             'assistance_needed'=>'required',
         ]);
         
+        $validatedData['business_type'] = $request->business_type;
         $impact = Impact::find($request->id);
 
         //Check if the data is found

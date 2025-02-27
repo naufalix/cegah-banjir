@@ -20,9 +20,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('type');
             $table->string('address');
+            $table->string('contact');
             $table->string('latitude');
             $table->string('longitude');
             $table->string('description');
+            $table->string('business_type')->nullable();
             $table->string('image');
             $table->string('assistance_needed');
             $table->string('status')->default(0);

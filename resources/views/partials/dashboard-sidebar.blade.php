@@ -2,8 +2,11 @@
           <!--begin::Logo-->
           <div class="docs-aside-logo flex-column-auto h-75px" id="kt_docs_aside_logo">
             <!--begin::Link-->
+            @php
+              $appName = App\Models\Meta::getDataMeta()['app_name'] ?? 'Cegah Banjir';
+            @endphp
             <a href="/" class="text-dark fs-2 fw-bold">
-              <img alt="Logo" src="/assets/img/logo.png" class="h-30px" /> Cegah Banjir
+              <img alt="Logo" src="{{ asset('assets/img/logo.png') }}" class="h-30px" />{{ $appName }}
             </a>
             <!--end::Link-->
           </div>

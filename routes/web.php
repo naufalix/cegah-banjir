@@ -20,6 +20,7 @@ use App\Http\Controllers\Auth\AuthController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/artikel', [PostController::class, 'blog']);
+Route::post('/artikel', [PostController::class, 'filter']);
 Route::get('/artikel/{post:slug}', [PostController::class, 'post']);
 Route::get('/beranda', [HomeController::class, 'index']);
 Route::get('/daerah-rawan/{risk:id}', [ReportController::class, 'risk']);

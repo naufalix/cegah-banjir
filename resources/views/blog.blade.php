@@ -13,9 +13,23 @@
 
   <div class="container px-md-5">
 
+    <form method="post">
+      @csrf
+      <div class="row col-md-6 mx-auto justify-content-center">
+        <div class="col-md-8">
+          <input type="text" class="form-control" name="keyword" placeholder="Cari artikel..." style="border-radius: 20px; height: 100%;">
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-success">Cari</button>
+        </div>
+      </div>
+    </form>
+
+    <br>
+
     <div class="row">
       
-      @foreach ($posts as $p)
+      @forelse ($posts as $p)
       @php
         $created = date_create($p->created_at);
         $body = str_replace('#', '', $p->body)
@@ -41,7 +55,11 @@
           </div>
         </div>
       </div>
-      @endforeach
+      @empty
+      <div class="alert alert-danger" role="alert">
+        Artikel tidak ditemukan
+      </div>
+      @endforelse
 
     </div>  
 

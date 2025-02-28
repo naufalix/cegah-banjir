@@ -5,7 +5,7 @@
     <div class="row gy-4">
       <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
         <h1>{{ $meta['app_name'] }}</h1>
-        <p>Kolaborasi antara pemerintah dan masyarakat penting untuk mengurangi risiko banjir. Platform ini menyediakan alat dan informasi untuk bersama-sama mengatasi penyebab banjir. Mari menciptakan lingkungan yang lebih aman dan bersih!</p>
+        <p>{{ $meta['description'] }}</p>
         <div class="d-flex">
           <a href="/beranda#home-map" class="btn-get-startedx btn btn-success">Mulai sekarang</a>
         </div>

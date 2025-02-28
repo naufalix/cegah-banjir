@@ -9,7 +9,7 @@
           <span class="sitename">{{ $meta['app_name'] }}</span>
         </a>
         <div class="footer-contact pt-3">
-          <p>Kolaborasi antara pemerintah dan masyarakat penting untuk mengurangi risiko banjir. Platform ini menyediakan alat dan informasi untuk bersama-sama mengatasi penyebab banjir. Mari menciptakan lingkungan yang lebih aman dan bersih!</p>
+          <p>{{ $meta['description'] }}</p>
         </div>
       </div>
 

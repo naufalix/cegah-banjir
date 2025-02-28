@@ -14,7 +14,7 @@ class Meta extends Model
     public static function getDataMeta() {
         return [
             'app_name'    => self::getAppName(),
-            'description' => 'Lorem ipsum',
+            'description' => 'Kolaborasi antara pemerintah dan masyarakat penting untuk mengurangi risiko banjir. Platform ini menyediakan alat dan informasi untuk bersama-sama mengatasi penyebab dan peduli dampak banjir. Mari menciptakan lingkungan yang lebih aman dan bersih!',
             'keywords'    => self::getAppName().', Cegah Banjir, Banjir, Lingkungan',
             'type'        => 'page',
             'title'       => self::getAppName().' | Platform edukasi pencegahan banjir',

@@ -22,9 +22,10 @@
         <li><a href="/artikel">Edukasi</a></li>
         <li><a href="/kegiatan">Kegiatan</a></li>
         @if(Auth::check())
-          <li class="dropdown profile-menu">
-            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <li class="dropdown">
+            <a href="#">
               <img src="/assets/img/user/{{ Auth::user()->image ?? 'default.webp' }}" alt="User Profile" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;">
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
             </a>
             <ul class="dropdown-menu">
               <li><a href="/dashboard/profil">Profile</a></li>

@@ -64,7 +64,6 @@
       <!--begin::Heading-->
       <div class="col-12 d-flex">
         <h1 class="anchor fw-bolder mb-5" id="striped-rounded-bordered">Tindak lanjut laporan</h1>
-        <button class="ms-auto btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambah">Tambah</button>
       </div>
       <!--end::Heading-->
       <!--begin::Block-->

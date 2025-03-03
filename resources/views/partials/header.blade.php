@@ -27,7 +27,7 @@
               <img src="/assets/img/user/{{ Auth::user()->image ?? 'default.webp' }}" alt="User Profile" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;">
               <i class="bi bi-chevron-down toggle-dropdown"></i>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="margin-left: -4px;">
               <li><a href="/dashboard/profil">Profile</a></li>
               <li><a href="/logout">Logout</a></li>
             </ul>

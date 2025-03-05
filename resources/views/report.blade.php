@@ -109,6 +109,58 @@
     </div>
   </div>
 
+  <br><br>
+
+  <div class="container section-title p-0" data-aos="fade-up">
+    <h2>Laporan dampak banjir</h2>
+  </div>
+
+  <div class="container px-md-5">
+    <div class="card p-4">
+      
+      <div class="ms-auto">
+        <a href="/dashboard/lapor-dampak">
+          <button class="btn btn-success py-2 px-3" style="font-size: 12px;"><i class="bi bi-plus-lg"></i> Buat laporan</button>
+        </a>
+      </div>
+
+      <div class="table-responsive">
+        <table id="myTable3" class="table table-striped table-hover table-rounded border gs-7">
+          <thead>
+            <tr class="fw-bold text-center">
+              <th class="d-none">No.</th>
+              <th style="min-width: 150px">Tanggal</th>
+              <th style="min-width: 150px">Nama</th>
+              <th style="min-width: 150px">Kota/Kabupaten</th>
+              <th style="min-width: 150px">Deskripsi</th>
+              <th style="min-width: 120px">Pelapor</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($impacts as $r)
+            @php
+              $date = date_create($r->created_at);
+            @endphp
+            <tr class="text-center">
+              <td class="d-none">{{$loop->iteration}}</td>
+              <td>{{date_format($date,"d F Y")}}</td>
+              <td><a href="/dampak-banjir/{{ $r->id }}">{{ $r->name }}</a></td>
+              <td>
+                
+                <span class="badge bg-primary">{{ $r->city->name }}</span>
+              </td>
+              <td>
+                {{ strlen($r->description) > 40 ? substr($r->description, 0, 40) . '...' : $r->description }}  
+              </td>
+              <td><a href="/kolaborator/{{ $r->user->username }}">{{ $r->user->name }}</a></td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
 </section>
 @endsection
 
@@ -128,6 +180,18 @@
   });
   $(document).ready(function () {
     $('#myTable2').DataTable({
+      "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All Pages"]],
+      "pageLength": 25,
+      "language": {
+        "paginate": {
+          "previous": "<",
+          "next": ">"
+        }
+      },
+    });
+  });
+  $(document).ready(function () {
+    $('#myTable3').DataTable({
       "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All Pages"]],
       "pageLength": 25,
       "language": {

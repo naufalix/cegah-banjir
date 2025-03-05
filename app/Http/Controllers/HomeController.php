@@ -40,6 +40,7 @@ class HomeController extends Controller
         $meta['title'] = "Peta penyebab banjir";
         return view('map',[
             "meta" => $meta,
+            "causes" => Cause::all(),
             "cities" => City::whereNotNull('latitude')->orderBy('name', 'ASC')->get(),
         ]);
     }

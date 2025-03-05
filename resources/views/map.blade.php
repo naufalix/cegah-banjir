@@ -5,7 +5,7 @@
 <section id="maps" class="section py-0">
   <div class="m-2" style="position: absolute;z-index: 1000;right: 0;">
     <div>
-      <select class="rounded mb-2" name="" id="city1">
+      <select class="rounded mb-2" name="" id="city1" style="width: -webkit-fill-available;">
         <option value="" selected disabled>- Pilih kota -</option>
         @foreach ($cities as $c)
           <option value="{{$c->id}}">{{$c->name}}</option>
@@ -15,6 +15,23 @@
       <a href="/dashboard/lapor-banjir">
         <button class="rounded bg-white" style="width: 100%">Buat laporan</button>
       </a>
+      <div class="p-2 mt-2 bg-white rounded border" style="font-size: 12px;">
+        <div class="d-flex justify-content-between align-items-center">
+          <p class="fw-bold mb-0">Keterangan:</p>
+          <button class="rounded-circle" type="button" data-bs-toggle="collapse" data-bs-target="#keteranganList" aria-expanded="true" aria-controls="keteranganList" style="border: 1px solid #aaa; width: 20px; height: 20px; font-size: 10px; padding: 3px 1px 1px 2px;">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <div class="collapse pt-2" id="keteranganList">
+          @foreach ($causes as $ca)
+            <p class="mb-0">
+              <i class="bi bi-square-fill" style="color:{{$ca->color}}"></i>
+              {{$ca->name}}
+            </p>  
+          @endforeach
+        </div>
+      </div>
+      
     </div>
   </div>
   <div id="map" class="" style="width: 100%; height: 80vh;"></div>

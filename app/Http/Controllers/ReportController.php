@@ -16,10 +16,11 @@ class ReportController extends Controller
 
     public function index(){
         $meta = $this->meta();
-        $meta['title'] = Meta::getAppName()." | Laporan penyebab banjir";
+        $meta['title'] = Meta::getAppName()." | Laporan penyebab & dampak banjir";
         return view('report',[
             "meta" => $meta,
             "floods" => Flood::orderBy('id', 'DESC')->get(),
+            "impacts" => Impact::orderBy('id', 'DESC')->get(),
             "risks" => Risk::orderBy('id', 'DESC')->get(),
         ]);
     }

@@ -16,7 +16,7 @@
     <form method="post">
       @csrf
       <div class="row col-md-6 mx-auto justify-content-center">
-        <div class="col-md-8">
+        <div class="col-8 col-md-8">
           <select class="form-select" id="city" name="city_id" style="border-radius: 20px; height: 100%;">
             <option value="" selected disabled>- Pilih kota -</option>
             @foreach ($cities as $c)
@@ -24,8 +24,8 @@
             @endforeach
           </select>
         </div>
-        <div class="col-md-2">
-          <button type="submit" class="btn btn-success">FIlter</button>
+        <div class="col-4 col-md-2">
+          <button type="submit" class="btn btn-success col-12">FIlter</button>
         </div>
       </div>
     </form>

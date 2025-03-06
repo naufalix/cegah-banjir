@@ -15,7 +15,7 @@
         $created = date_create($p->created_at);
         $body = str_replace('#', '', $p->body)
       @endphp
-      <div class="col-md-4">
+      <div class="col-md-4 mb-4">
         <div class="card position-relative" style="border-radius:20px; border: 0px">
           <div class="card-body" style="border-radius:20px; padding: 20px">
             <img class="mb-3" src="/assets/img/post/{{$p->image}}"

@@ -16,11 +16,11 @@
     <form method="post">
       @csrf
       <div class="row col-md-6 mx-auto justify-content-center">
-        <div class="col-md-8">
+        <div class="col-8 col-md-8">
           <input type="text" class="form-control" name="keyword" placeholder="Cari artikel..." style="border-radius: 20px; height: 100%;">
         </div>
-        <div class="col-md-2">
-          <button type="submit" class="btn btn-success">Cari</button>
+        <div class="col-4 col-md-2">
+          <button type="submit" class="btn btn-success col-12">Cari</button>
         </div>
       </div>
     </form>

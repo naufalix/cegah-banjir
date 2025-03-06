@@ -11,7 +11,7 @@
     <div class="row text-center justify-content-center">
 
       @foreach ($users as $u)
-      <div class="col-md-3">
+      <div class="col-md-3 mb-4">
         <a href="/kolaborator/{{$u->username}}">
           <div class="card" style="padding: 20px; border-radius: 20px">
             

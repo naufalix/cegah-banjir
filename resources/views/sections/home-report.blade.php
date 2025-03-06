@@ -11,7 +11,7 @@
     <div class="row gy-3">
 
       <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="about-content ps-0 ps-lg-3">
+        <div class="about-content ps-0 ps-lg-3 text-center text-md-start">
           <h3>Deskripsi Singkat Fitur</h3>
           <p>
             Fitur ini memungkinkan masyarakat untuk melaporkan berbagai permasalahan yang berpotensi menyebabkan banjir, seperti saluran air tersumbat, penumpukan sampah, dan pendangkalan sungai.
